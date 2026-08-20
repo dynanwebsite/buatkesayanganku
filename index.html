@@ -12,6 +12,7 @@
             box-sizing: border-box;
         }
 
+        html,
         body {
             min-height: 100vh;
             display: flex;
@@ -102,13 +103,14 @@
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 48px;
-            padding: 3.5rem 4.5rem;
-            max-width: 700px;
+            padding: 3rem 3.5rem;
+            max-width: 500px;
             width: 90%;
             text-align: center;
             box-shadow: 0 20px 60px rgba(255, 80, 120, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
             border: 1px solid rgba(255, 255, 255, 0.3);
             animation: cardIn 0.6s ease-out;
+            margin: 0 auto;
         }
 
         @keyframes cardIn {
@@ -125,15 +127,18 @@
         /* ----- SEMUA HALAMAN (sembunyi/tampil) ----- */
         .page {
             display: none;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
         }
 
         .page.active {
-            display: block;
+            display: flex;
         }
 
         /* ----- WELCOME PAGE ----- */
         #welcome h1 {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             font-weight: 700;
             color: #b3415c;
             text-shadow: 0 4px 20px rgba(255, 80, 120, 0.2);
@@ -143,26 +148,26 @@
 
         #welcome h1 span {
             display: block;
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: #d94f6e;
             margin-top: 0.1rem;
         }
 
         .sub-heart {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             color: #e05a7a;
             opacity: 0.7;
-            margin-bottom: 2rem;
+            margin-bottom: 1.8rem;
             letter-spacing: 12px;
         }
 
         /* ----- TOMBOL ----- */
         .btn {
             display: inline-block;
-            padding: 1rem 3.5rem;
+            padding: 0.9rem 3rem;
             background: linear-gradient(135deg, #ff6b8a, #ee4e6b);
             color: #fff;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 600;
             border: none;
             border-radius: 60px;
@@ -184,53 +189,53 @@
         }
 
         /* ----- LOCK SCREEN ----- */
-        #lockscreen h2 {
-            font-size: 2.2rem;
+        #lockscreen .card h2 {
+            font-size: 2rem;
             color: #b3415c;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
         }
 
-        #lockscreen h2 span {
+        #lockscreen .card h2 span {
             display: block;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #d94f6e;
-            margin-top: 0.2rem;
+            margin-top: 0.1rem;
             font-weight: 400;
         }
 
         .pin-display {
-            font-size: 2.5rem;
-            letter-spacing: 16px;
+            font-size: 2.2rem;
+            letter-spacing: 14px;
             color: #b3415c;
             background: rgba(255, 255, 255, 0.4);
-            padding: 0.6rem 1rem;
-            border-radius: 20px;
-            margin: 1rem auto 1.5rem;
-            min-height: 75px;
+            padding: 0.5rem 1rem;
+            border-radius: 16px;
+            margin: 0.8rem auto 1.2rem;
+            min-height: 65px;
             display: flex;
             align-items: center;
             justify-content: center;
             border: 2px dashed rgba(180, 60, 90, 0.2);
             font-weight: 600;
-            max-width: 350px;
+            max-width: 320px;
         }
 
         .pin-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-            max-width: 300px;
-            margin: 0 auto 1rem;
+            gap: 10px;
+            max-width: 260px;
+            margin: 0 auto 0.8rem;
         }
 
         .pin-btn {
-            padding: 1rem 0;
-            font-size: 1.8rem;
+            padding: 0.9rem 0;
+            font-size: 1.6rem;
             font-weight: 600;
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(4px);
             border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 20px;
+            border-radius: 16px;
             cursor: pointer;
             color: #4a2a3a;
             transition: all 0.15s ease;
@@ -257,16 +262,16 @@
         .pin-actions {
             display: flex;
             justify-content: center;
-            gap: 14px;
-            margin: 0.5rem 0 1rem;
+            gap: 12px;
+            margin: 0.3rem 0 0.8rem;
             flex-wrap: wrap;
         }
 
         .pin-actions button {
-            padding: 0.6rem 1.8rem;
+            padding: 0.5rem 1.6rem;
             border: none;
             border-radius: 40px;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -291,10 +296,10 @@
 
         .pin-error {
             color: #d94f4f;
-            font-size: 1rem;
-            min-height: 2.4rem;
+            font-size: 0.95rem;
+            min-height: 2.2rem;
             font-weight: 500;
-            padding: 0.3rem;
+            padding: 0.2rem;
         }
 
         .pin-error.success {
@@ -302,7 +307,7 @@
         }
 
         /* ----- AMPLOP PAGE ----- */
-        #envelope h2 {
+        #envelope .card h2 {
             font-size: 2rem;
             color: #b3415c;
             margin-bottom: 0.3rem;
@@ -319,7 +324,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 1rem 0 1.5rem;
+            margin: 0.5rem 0 1.2rem;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
@@ -333,8 +338,8 @@
         }
 
         .envelope-svg {
-            width: 180px;
-            height: 140px;
+            width: 160px;
+            height: 120px;
             filter: drop-shadow(0 8px 25px rgba(180, 60, 90, 0.25));
         }
 
@@ -397,72 +402,50 @@
             }
         }
 
-        /* ----- SLIDE (halaman setelah amplop) ----- */
-        #slide h2 {
-            font-size: 2.2rem;
-            color: #b3415c;
-            margin-bottom: 1rem;
-        }
-
-        #slide .love-message {
-            font-size: 1.2rem;
-            color: #5a3a4a;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            padding: 0 0.5rem;
-        }
-
-        #slide .love-message .heart-big {
-            font-size: 2.5rem;
-            display: block;
-            margin: 0.5rem 0;
-        }
-
         /* ----- RESPONSIF ----- */
         @media (max-width: 600px) {
             .card {
                 padding: 2rem 1.5rem;
                 border-radius: 32px;
+                max-width: 95%;
             }
             #welcome h1 {
                 font-size: 2rem;
             }
             #welcome h1 span {
-                font-size: 1.6rem;
+                font-size: 1.5rem;
             }
             .btn {
-                padding: 0.8rem 2.5rem;
-                font-size: 1.2rem;
+                padding: 0.8rem 2.2rem;
+                font-size: 1.1rem;
             }
             body::after {
                 font-size: 2rem;
                 letter-spacing: 16px;
             }
             .pin-grid {
-                gap: 10px;
-                max-width: 250px;
+                gap: 8px;
+                max-width: 220px;
             }
             .pin-btn {
-                padding: 0.8rem 0;
-                font-size: 1.5rem;
+                padding: 0.7rem 0;
+                font-size: 1.3rem;
             }
             .pin-display {
-                font-size: 2rem;
-                letter-spacing: 12px;
-                min-height: 60px;
+                font-size: 1.8rem;
+                letter-spacing: 10px;
+                min-height: 55px;
             }
-            #lockscreen h2 {
+            #lockscreen .card h2 {
                 font-size: 1.6rem;
             }
             .envelope-svg {
-                width: 140px;
-                height: 110px;
+                width: 130px;
+                height: 100px;
             }
-            #slide h2 {
-                font-size: 1.8rem;
-            }
-            #slide .love-message {
-                font-size: 1rem;
+            .pin-actions button {
+                padding: 0.4rem 1.2rem;
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -490,7 +473,7 @@
         <div class="card">
             <h2>
                 🔐 Masukkan PIN
-                <span>💖 Khusus untuk Fran 💖</span>
+                <span>💖 Khusus buat cewe kesayangan Fran 💖</span>
             </h2>
             <div class="sub-heart" style="font-size:1.2rem; margin-bottom:0.8rem;">❤ ✿ ❤</div>
 
@@ -550,32 +533,6 @@
         </div>
     </div>
 
-    <!-- ============================================================ -->
-    <!-- HALAMAN 4: SLIDE ISI WEB -->
-    <!-- ============================================================ -->
-    <div id="slide" class="page">
-        <div class="card">
-            <h2>💖 Untuk Fran Tersayang 💖</h2>
-            <div class="love-message">
-                <span class="heart-big">❤️</span>
-                <p>Hari-hari terasa lebih indah</p>
-                <p>karena ada kamu di dalamnya.</p>
-                <p>Terima kasih sudah menjadi bagian</p>
-                <p>dari cerita hidupku.</p>
-                <span class="heart-big">💕</span>
-                <p style="margin-top:0.8rem; font-weight:600; color:#b3415c;">
-                    I Love You, Fran!
-                </p>
-                <p style="font-size:0.9rem; opacity:0.6; margin-top:0.3rem;">
-                    — Dari seseorang yang menyayangimu —
-                </p>
-            </div>
-            <button class="btn" onclick="alert('❤️ Aku sayang kamu, Fran! ❤️')" style="font-size:1.1rem; padding:0.8rem 2.5rem;">
-                💗 Kembali 💗
-            </button>
-        </div>
-    </div>
-
     <script>
         // ================================================================
         // VARIABLES
@@ -605,7 +562,9 @@
         }
 
         function openEnvelope() {
-            showPage('slide');
+            // Saat amplop diklik, muncul pesan cinta
+            alert('💖 Untuk cewe kesayangan Fran! 💖\n\nAku sayang banget sama kamu! ❤️\nSemoga hari-harimu selalu indah! ✨');
+            // Bisa juga ditambah efek atau pindah ke halaman lain
         }
 
         // ================================================================
