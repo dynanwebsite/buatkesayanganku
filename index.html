@@ -136,7 +136,7 @@
         }
 
         /* ============================================================ */
-        /* WELCOME - LOVE GA NYAMBUNG KE BAWAH! */
+        /* WELCOME */
         /* ============================================================ */
         #welcome .welcome-title {
             font-size: 2.8rem;
@@ -685,7 +685,6 @@
             transform: translateY(-3px) scale(1.03);
         }
 
-        /* Indikator slide */
         .slide-indicator {
             display: flex;
             justify-content: center;
@@ -708,7 +707,14 @@
         }
 
         /* ============================================================ */
-        /* RESPONSIF HP */
+        /* AUDIO PLAYER - SEMBUNYI + LOOP */
+        /* ============================================================ */
+        #bgMusic {
+            display: none;
+        }
+
+        /* ============================================================ */
+        /* RESPONSIF */
         /* ============================================================ */
         @media (max-width: 600px) {
             .card {
@@ -717,7 +723,6 @@
                 max-width: 97%;
             }
 
-            /* WELCOME - LOVE GA NYAMBUNG DI HP */
             #welcome .welcome-title {
                 font-size: 2rem;
                 margin-bottom: 0.3rem;
@@ -736,7 +741,6 @@
                 font-size: 1.1rem;
             }
 
-            /* Bingkai */
             .photo-frame {
                 max-width: 95%;
                 padding: 14px;
@@ -745,7 +749,6 @@
                 font-size: 1.8rem;
             }
 
-            /* Tombol */
             .slide-nav {
                 gap: 10px;
                 padding: 0.5rem 0;
@@ -763,7 +766,6 @@
                 font-size: 1.6rem;
             }
 
-            /* I Love You */
             .big-love {
                 font-size: 5.5rem;
             }
@@ -777,7 +779,6 @@
                 padding: 1.8rem 1.2rem;
             }
 
-            /* Lock Screen */
             .pin-grid {
                 gap: 8px;
                 max-width: 230px;
@@ -839,7 +840,21 @@
 <body>
 
     <!-- ============================================================ -->
-    <!-- HALAMAN 1: WELCOME - LOVE GA NYAMBUNG! -->
+    <!-- AUDIO - LOOP OTOMATIS (GANTI LINK GITHUB) -->
+    <!-- ============================================================ -->
+    <audio id="bgMusic" loop autoplay>
+        <!-- 
+            ⚠️ GANTI src="..." DENGAN LINK GITHUB KAMU!
+            Contoh: https://raw.githubusercontent.com/username/repo/main/fran.mp3
+            
+            ⚠️ JANGAN LUPA UPLOAD FILE fran.mp3 KE GITHUB!
+        -->
+        <source src="https://raw.githubusercontent.com/username/repo/main/fran.mp3" type="audio/mpeg" />
+        Browser tidak mendukung audio.
+    </audio>
+
+    <!-- ============================================================ -->
+    <!-- WELCOME -->
     <!-- ============================================================ -->
     <div id="welcome" class="page active">
         <div class="card">
@@ -851,7 +866,7 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- HALAMAN 2: LOCK SCREEN PIN -->
+    <!-- LOCK SCREEN PIN -->
     <!-- ============================================================ -->
     <div id="lockscreen" class="page">
         <div class="card">
@@ -881,7 +896,7 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- HALAMAN 3: AMPLOP -->
+    <!-- AMPLOP -->
     <!-- ============================================================ -->
     <div id="envelope" class="page">
         <div class="card">
@@ -905,7 +920,7 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- HALAMAN 4: ROMANTIC SLIDE (3 SLIDE) -->
+    <!-- ROMANTIC SLIDE -->
     <!-- ============================================================ -->
     <div id="romantic" class="page">
         <div class="card">
@@ -1001,7 +1016,7 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- HALAMAN 5: I LOVE YOU MORE -->
+    <!-- I LOVE YOU MORE -->
     <!-- ============================================================ -->
     <div id="iloveyou" class="page">
         <div class="card">
@@ -1143,6 +1158,15 @@
                 errorEl.textContent = '✅ PIN Benar! ❤️';
                 errorEl.className = 'pin-error success';
                 wrongAttempts = 0;
+
+                // ============================================================
+                // PUTAR LAGU OTOMATIS SAAT PIN BENAR!
+                // ============================================================
+                const audio = document.getElementById('bgMusic');
+                audio.play().catch(function(error) {
+                    console.log('Autoplay diblokir browser, klik layar untuk putar');
+                });
+
                 setTimeout(() => {
                     showEnvelope();
                     resetPinState();
@@ -1164,6 +1188,18 @@
             pinEntered = '';
             updatePinDisplay();
         }
+
+        // ================================================================
+        // KLIK DI MANA SAJA UNTUK MULAI LAGU (BYPASS AUTOPLAY)
+        // ================================================================
+        document.addEventListener('click', function() {
+            const audio = document.getElementById('bgMusic');
+            if (audio.paused) {
+                audio.play().catch(function(error) {
+                    console.log('Gagal putar audio');
+                });
+            }
+        });
 
         document.addEventListener('keydown', function(e) {
             const lockActive = document.getElementById('lockscreen').classList.contains('active');
