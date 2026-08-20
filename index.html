@@ -19,7 +19,6 @@
             align-items: center;
             font-family: 'Segoe UI', 'Arial', sans-serif;
             background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fdfcfb 100%);
-            /* background love & bunga bergerak (dari pseudo-element) */
             position: relative;
             overflow: hidden;
         }
@@ -31,12 +30,10 @@
             inset: 0;
             z-index: 0;
             background-image:
-                /* Love (❤) */
                 radial-gradient(circle at 10% 20%, rgba(255, 80, 120, 0.15) 0%, transparent 8%),
                 radial-gradient(circle at 85% 30%, rgba(255, 80, 120, 0.12) 0%, transparent 10%),
                 radial-gradient(circle at 40% 70%, rgba(255, 80, 120, 0.10) 0%, transparent 12%),
                 radial-gradient(circle at 70% 80%, rgba(255, 80, 120, 0.08) 0%, transparent 10%),
-                /* Bunga (bentuk sederhana pakai radial + conic) */
                 radial-gradient(circle at 20% 60%, rgba(255, 200, 50, 0.15) 0%, transparent 7%),
                 radial-gradient(circle at 75% 15%, rgba(255, 180, 100, 0.12) 0%, transparent 8%),
                 radial-gradient(circle at 50% 90%, rgba(255, 220, 150, 0.10) 0%, transparent 10%),
@@ -47,7 +44,6 @@
             pointer-events: none;
         }
 
-        /* tambahan elemen love & bunga yang lebih jelas (pakai pseudo kedua) */
         body::after {
             content: '❤ ✿ ❀ ✿ ❤ ✿ ❀ ✿ ❤';
             position: fixed;
@@ -98,21 +94,19 @@
             }
         }
 
-        /* ----- KOTAK WELCOME (di atas background) ----- */
-        .welcome-card {
+        /* ----- CARD (Welcome & Lock Screen pakai class yang sama) ----- */
+        .card {
             position: relative;
             z-index: 1;
             background: rgba(255, 255, 255, 0.55);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-            border-radius: 48px 48px 48px 48px;
+            border-radius: 48px;
             padding: 3.5rem 4.5rem;
             max-width: 700px;
             width: 90%;
             text-align: center;
-            box-shadow: 
-                0 20px 60px rgba(255, 80, 120, 0.25),
-                0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+            box-shadow: 0 20px 60px rgba(255, 80, 120, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
             border: 1px solid rgba(255, 255, 255, 0.3);
             animation: cardIn 1s ease-out;
         }
@@ -128,17 +122,24 @@
             }
         }
 
-        .welcome-card h1 {
+        .card h1 {
             font-size: 2.8rem;
             font-weight: 700;
             color: #b3415c;
             text-shadow: 0 4px 20px rgba(255, 80, 120, 0.2);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.2rem;
             letter-spacing: -0.5px;
             word-break: break-word;
         }
 
-        .welcome-card .sub-heart {
+        .card h1 span {
+            display: block;
+            font-size: 2.2rem;
+            color: #d94f6e;
+            margin-top: 0.1rem;
+        }
+
+        .card .sub-heart {
             font-size: 1.8rem;
             color: #e05a7a;
             opacity: 0.7;
@@ -146,7 +147,7 @@
             letter-spacing: 12px;
         }
 
-        /* ----- TOMBOL MASUK ----- */
+        /* ----- TOMBOL ----- */
         .btn-masuk {
             display: inline-block;
             padding: 1rem 3.5rem;
@@ -159,9 +160,7 @@
             cursor: pointer;
             box-shadow: 0 12px 30px rgba(238, 78, 107, 0.4);
             transition: all 0.3s ease;
-            text-decoration: none;
             letter-spacing: 1.5px;
-            backdrop-filter: blur(4px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
@@ -173,17 +172,141 @@
 
         .btn-masuk:active {
             transform: scale(0.96);
-            box-shadow: 0 6px 20px rgba(238, 78, 107, 0.3);
+        }
+
+        /* ----- LOCK SCREEN ----- */
+        .lock-screen {
+            display: none;
+            /* sembunyi dulu */
+        }
+
+        .lock-screen.active {
+            display: block;
+        }
+
+        .lock-screen .pin-display {
+            font-size: 2.5rem;
+            letter-spacing: 16px;
+            color: #b3415c;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 0.6rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed rgba(180, 60, 90, 0.2);
+            font-weight: 600;
+        }
+
+        .pin-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            max-width: 320px;
+            margin: 0 auto 1.2rem;
+        }
+
+        .pin-btn {
+            padding: 1.1rem 0;
+            font-size: 1.8rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            cursor: pointer;
+            color: #4a2a3a;
+            transition: all 0.15s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .pin-btn:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: scale(1.04);
+        }
+
+        .pin-btn:active {
+            transform: scale(0.94);
+            background: rgba(255, 200, 200, 0.5);
+        }
+
+        .pin-btn.empty {
+            background: transparent;
+            box-shadow: none;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .pin-btn.empty:hover {
+            transform: none;
+            background: transparent;
+        }
+
+        .pin-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .pin-actions button {
+            padding: 0.6rem 2rem;
+            border: none;
+            border-radius: 40px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(4px);
+            color: #4a2a3a;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .pin-actions button:hover {
+            background: rgba(255, 255, 255, 0.8);
+            transform: scale(1.03);
+        }
+
+        .pin-actions .btn-clear {
+            background: rgba(255, 100, 100, 0.2);
+        }
+
+        .pin-actions .btn-clear:hover {
+            background: rgba(255, 100, 100, 0.4);
+        }
+
+        .lock-screen .error-msg {
+            color: #d94f4f;
+            font-size: 0.95rem;
+            margin-top: 0.8rem;
+            min-height: 2.2rem;
+            font-weight: 500;
+        }
+
+        /* ----- WELCOME (default tampil) ----- */
+        .welcome-screen {
+            display: block;
+        }
+
+        .welcome-screen.hidden {
+            display: none;
         }
 
         /* ----- RESPONSIF ----- */
         @media (max-width: 600px) {
-            .welcome-card {
+            .card {
                 padding: 2.5rem 1.8rem;
                 border-radius: 32px;
             }
-            .welcome-card h1 {
+            .card h1 {
                 font-size: 2rem;
+            }
+            .card h1 span {
+                font-size: 1.6rem;
             }
             .btn-masuk {
                 padding: 0.8rem 2.5rem;
@@ -193,19 +316,192 @@
                 font-size: 2rem;
                 letter-spacing: 16px;
             }
+            .pin-grid {
+                gap: 10px;
+                max-width: 260px;
+            }
+            .pin-btn {
+                padding: 0.9rem 0;
+                font-size: 1.5rem;
+            }
+            .pin-display {
+                font-size: 2rem;
+                letter-spacing: 12px;
+                min-height: 60px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- CARD WELCOME -->
-    <div class="welcome-card">
-        <h1>💗 Welcome To<br />Web Kesayangan Fran</h1>
+    <!-- ====== WELCOME SCREEN ====== -->
+    <div id="welcomeScreen" class="card welcome-screen">
+        <h1>
+            Welcome To Love
+            <span>💗 Web Kesayangan Fran 💗</span>
+        </h1>
         <div class="sub-heart">❤ ✿ ❤ ✿ ❤</div>
-        <!-- Tombol Masuk -->
-        <button class="btn-masuk" onclick="alert('Halo Fran! ❤️ Selamat datang di web spesial untukmu!')">✨ Masuk ✨</button>
-        <!-- (Kamu bisa ganti onclick dengan link / fungsi lain nanti) -->
+        <button class="btn-masuk" onclick="showLockScreen()">✨ Masuk ✨</button>
     </div>
+
+    <!-- ====== LOCK SCREEN PIN ====== -->
+    <div id="lockScreen" class="card lock-screen">
+        <h1 style="font-size:2rem;">
+            🔐 Masukkan PIN
+            <span style="font-size:1.2rem; color:#b3415c; margin-top:0.3rem;">💖 Untuk Fran Tercinta 💖</span>
+        </h1>
+        <div class="sub-heart" style="font-size:1.2rem; margin-bottom:1.2rem;">❤ ✿ ❤</div>
+
+        <!-- Tampilan PIN -->
+        <div class="pin-display" id="pinDisplay">— — — — — — — —</div>
+
+        <!-- Grid PIN 1-9, 0, hapus -->
+        <div class="pin-grid">
+            <button class="pin-btn" onclick="pinInput('1')">1</button>
+            <button class="pin-btn" onclick="pinInput('2')">2</button>
+            <button class="pin-btn" onclick="pinInput('3')">3</button>
+            <button class="pin-btn" onclick="pinInput('4')">4</button>
+            <button class="pin-btn" onclick="pinInput('5')">5</button>
+            <button class="pin-btn" onclick="pinInput('6')">6</button>
+            <button class="pin-btn" onclick="pinInput('7')">7</button>
+            <button class="pin-btn" onclick="pinInput('8')">8</button>
+            <button class="pin-btn" onclick="pinInput('9')">9</button>
+            <button class="pin-btn empty"></button>
+            <button class="pin-btn" onclick="pinInput('0')">0</button>
+            <button class="pin-btn" onclick="pinClear()">⌫</button>
+        </div>
+
+        <!-- Tombol Hapus & OK -->
+        <div class="pin-actions">
+            <button class="btn-clear" onclick="pinClearAll()">✕ Hapus</button>
+            <button onclick="pinSubmit()" style="background:rgba(255,100,150,0.3);">✔ OK</button>
+        </div>
+
+        <!-- Pesan error -->
+        <div class="error-msg" id="pinError"></div>
+    </div>
+
+    <script>
+        // ====== VARIABLES ======
+        const PIN = '14072026';
+        let pinEntered = '';
+        let wrongAttempts = 0;
+        const maxWrong = 3;
+
+        // ====== FUNGSI PIN ======
+        function pinInput(digit) {
+            if (pinEntered.length >= 8) return;
+            pinEntered += digit;
+            updatePinDisplay();
+            clearError();
+        }
+
+        function pinClear() {
+            pinEntered = pinEntered.slice(0, -1);
+            updatePinDisplay();
+            clearError();
+        }
+
+        function pinClearAll() {
+            pinEntered = '';
+            updatePinDisplay();
+            clearError();
+        }
+
+        function updatePinDisplay() {
+            const display = document.getElementById('pinDisplay');
+            const masked = pinEntered.padEnd(8, '—');
+            // tampilkan 8 karakter, pisahkan dengan spasi
+            display.textContent = masked.split('').join(' ');
+        }
+
+        function clearError() {
+            document.getElementById('pinError').textContent = '';
+        }
+
+        function pinSubmit() {
+            const errorEl = document.getElementById('pinError');
+
+            // Cek apakah PIN sudah 8 digit
+            if (pinEntered.length !== 8) {
+                errorEl.textContent = '❌ PIN harus 8 digit ya sayang!';
+                return;
+            }
+
+            if (pinEntered === PIN) {
+                // BENAR!
+                errorEl.style.color = '#2e7d32';
+                errorEl.textContent = '✅ PIN Benar! ❤️ Selamat datang sayang!';
+                // Di sini nanti bisa diarahkan ke halaman utama
+                // Contoh: alert('Selamat datang Fran! 💖');
+                // Atau pindah halaman: window.location.href = '...';
+                setTimeout(() => {
+                    alert('💖 Selamat datang Fran! Aku sayang kamu! 💖');
+                    // Reset PIN untuk下次
+                    resetPin();
+                }, 300);
+                return;
+            }
+
+            // SALAH
+            wrongAttempts++;
+            const sisa = maxWrong - wrongAttempts;
+
+            if (wrongAttempts >= maxWrong) {
+                // 3× salah → kasih tau PIN
+                errorEl.style.color = '#d94f4f';
+                errorEl.textContent = '💌 pin nya ini ya sayang 14072026 💌';
+                // Reset attempts biar nggak terus-terusan
+                wrongAttempts = 0;
+                // Tapi PIN tetap harus di-reset agar bisa coba lagi
+                resetPin();
+                // Kosongkan PIN
+                pinEntered = '';
+                updatePinDisplay();
+                return;
+            }
+
+            // Salah tapi belum 3×
+            errorEl.style.color = '#d94f4f';
+            errorEl.textContent = `❌ PIN salah! Coba lagi (${sisa}× kesempatan lagi)`;
+            pinEntered = '';
+            updatePinDisplay();
+        }
+
+        function resetPin() {
+            pinEntered = '';
+            updatePinDisplay();
+            // Jangan reset error kalau sedang kasih tau PIN
+        }
+
+        // ====== TAMPILKAN LOCK SCREEN ======
+        function showLockScreen() {
+            document.getElementById('welcomeScreen').classList.add('hidden');
+            document.getElementById('lockScreen').classList.add('active');
+            // Reset state
+            wrongAttempts = 0;
+            pinEntered = '';
+            updatePinDisplay();
+            document.getElementById('pinError').textContent = '';
+            document.getElementById('pinError').style.color = '#d94f4f';
+        }
+
+        // ====== KEYBOARD SUPPORT (opsional) ======
+        document.addEventListener('keydown', function(e) {
+            const lockActive = document.getElementById('lockScreen').classList.contains('active');
+            if (!lockActive) return;
+
+            if (e.key >= '0' && e.key <= '9') {
+                pinInput(e.key);
+            } else if (e.key === 'Backspace') {
+                pinClear();
+            } else if (e.key === 'Enter') {
+                pinSubmit();
+            } else if (e.key === 'Escape' || e.key === 'Delete') {
+                pinClearAll();
+            }
+        });
+    </script>
 
 </body>
 </html>
