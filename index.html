@@ -101,8 +101,8 @@
             -webkit-backdrop-filter: blur(8px);
             border-radius: 48px;
             padding: 3rem 3.5rem;
-            max-width: 600px;
-            width: 90%;
+            max-width: 680px;
+            width: 92%;
             text-align: center;
             box-shadow: 0 20px 60px rgba(255, 80, 120, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -132,28 +132,36 @@
             display: flex;
         }
 
-        #welcome h1 {
+        /* ============================================ */
+        /* WELCOME - FIX: LOVE GA NYAMBUNG KE BAWAH */
+        /* ============================================ */
+        #welcome .welcome-title {
             font-size: 2.8rem;
             font-weight: 700;
             color: #b3415c;
             text-shadow: 0 4px 20px rgba(255, 80, 120, 0.2);
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.1rem;
             letter-spacing: -0.5px;
+            line-height: 1.2;
         }
 
-        #welcome h1 span {
-            display: block;
+        #welcome .welcome-sub {
             font-size: 2.2rem;
             color: #d94f6e;
+            font-weight: 600;
             margin-top: 0.1rem;
+            margin-bottom: 0.2rem;
+            display: block;
+            line-height: 1.3;
         }
 
-        .sub-heart {
-            font-size: 1.8rem;
+        #welcome .welcome-love {
+            font-size: 1.6rem;
             color: #e05a7a;
             opacity: 0.7;
-            margin-bottom: 2rem;
+            margin: 0.2rem 0 1.5rem 0;
             letter-spacing: 14px;
+            display: block;
         }
 
         .btn {
@@ -182,6 +190,9 @@
             transform: scale(0.96);
         }
 
+        /* ============================================ */
+        /* LOCK SCREEN */
+        /* ============================================ */
         #lockscreen .card h2 {
             font-size: 2.2rem;
             color: #b3415c;
@@ -299,6 +310,9 @@
             color: #2e7d32;
         }
 
+        /* ============================================ */
+        /* AMPLOP */
+        /* ============================================ */
         #envelope .card h2 {
             font-size: 2.2rem;
             color: #b3415c;
@@ -394,6 +408,9 @@
             }
         }
 
+        /* ============================================ */
+        /* SLIDE FOTO + ROMANTIS */
+        /* ============================================ */
         .slide-photo {
             display: none;
         }
@@ -419,11 +436,11 @@
         .photo-frame {
             position: relative;
             width: 100%;
-            max-width: 400px;
+            max-width: 450px;
             margin: 0 auto 1.2rem;
-            padding: 16px;
+            padding: 18px;
             background: linear-gradient(135deg, #ffb6c1, #ff69b4, #ff1493);
-            border-radius: 28px;
+            border-radius: 32px;
             box-shadow: 0 0 30px rgba(255, 20, 147, 0.3), 0 0 60px rgba(255, 105, 180, 0.15);
             animation: frameGlow 3s ease-in-out infinite alternate;
         }
@@ -439,7 +456,7 @@
 
         .photo-frame-inner {
             position: relative;
-            border-radius: 18px;
+            border-radius: 20px;
             overflow: hidden;
             background: #fff;
             aspect-ratio: 1/1;
@@ -457,30 +474,30 @@
 
         .frame-corner {
             position: absolute;
-            font-size: 2.2rem;
-            opacity: 0.7;
+            font-size: 2.4rem;
+            opacity: 0.8;
             animation: floatCorner 4s ease-in-out infinite;
             filter: drop-shadow(0 2px 8px rgba(255, 20, 147, 0.3));
         }
 
         .frame-corner.tl {
-            top: -6px;
-            left: -6px;
+            top: -4px;
+            left: -4px;
             animation-delay: 0s;
         }
         .frame-corner.tr {
-            top: -6px;
-            right: -6px;
+            top: -4px;
+            right: -4px;
             animation-delay: 1s;
         }
         .frame-corner.bl {
-            bottom: -6px;
-            left: -6px;
+            bottom: -4px;
+            left: -4px;
             animation-delay: 2s;
         }
         .frame-corner.br {
-            bottom: -6px;
-            right: -6px;
+            bottom: -4px;
+            right: -4px;
             animation-delay: 3s;
         }
 
@@ -530,6 +547,86 @@
             margin-top: 0.5rem;
         }
 
+        /* ============================================ */
+        /* SLIDE 4 - I LOVE YOU MORE (FIX!) */
+        /* ============================================ */
+        #iloveyou {
+            background: transparent;
+        }
+
+        #iloveyou .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 3rem 2.5rem;
+        }
+
+        .big-love-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.3rem;
+            padding: 0.5rem 0;
+        }
+
+        .big-love {
+            font-size: 9rem;
+            line-height: 1;
+            color: #ffffff;
+            text-shadow: 
+                0 0 30px rgba(255, 255, 255, 0.9),
+                0 0 60px rgba(255, 255, 255, 0.6),
+                0 0 100px rgba(255, 255, 255, 0.4),
+                0 0 150px rgba(255, 255, 255, 0.2);
+            animation: loveGlow 1.8s ease-in-out infinite alternate;
+            display: inline-block;
+            margin: 0;
+        }
+
+        @keyframes loveGlow {
+            0% {
+                text-shadow: 
+                    0 0 20px rgba(255, 255, 255, 0.6),
+                    0 0 40px rgba(255, 255, 255, 0.3),
+                    0 0 60px rgba(255, 255, 255, 0.1);
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.12);
+            }
+            100% {
+                text-shadow: 
+                    0 0 40px rgba(255, 255, 255, 1),
+                    0 0 80px rgba(255, 255, 255, 0.7),
+                    0 0 120px rgba(255, 255, 255, 0.5),
+                    0 0 180px rgba(255, 255, 255, 0.3);
+                transform: scale(1.06);
+            }
+        }
+
+        .big-love-text {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+            letter-spacing: 4px;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .big-love-sub {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-style: italic;
+            letter-spacing: 2px;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* ============================================ */
+        /* NAVIGASI SLIDE */
+        /* ============================================ */
         .slide-nav {
             display: flex;
             justify-content: center;
@@ -571,6 +668,18 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         }
 
+        .slide-nav .btn-nav-white {
+            background: rgba(255, 255, 255, 0.25);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .slide-nav .btn-nav-white:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        /* Indikator slide */
         .slide-indicator {
             display: flex;
             justify-content: center;
@@ -592,16 +701,24 @@
             box-shadow: 0 0 20px rgba(238, 78, 107, 0.3);
         }
 
+        .slide-indicator .dot-white.active {
+            background: #ffffff;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        }
+
+        /* ============================================ */
+        /* RESPONSIF */
+        /* ============================================ */
         @media (max-width: 600px) {
             .card {
                 padding: 2rem 1.5rem;
                 border-radius: 32px;
                 max-width: 95%;
             }
-            #welcome h1 {
+            #welcome .welcome-title {
                 font-size: 2rem;
             }
-            #welcome h1 span {
+            #welcome .welcome-sub {
                 font-size: 1.5rem;
             }
             .btn {
@@ -633,11 +750,11 @@
                 height: 110px;
             }
             .photo-frame {
-                max-width: 300px;
-                padding: 12px;
+                max-width: 320px;
+                padding: 14px;
             }
             .frame-corner {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
             .romantic-quotes p {
                 font-size: 0.95rem;
@@ -649,38 +766,67 @@
                 padding: 0.6rem 1.8rem;
                 font-size: 0.9rem;
             }
+            .big-love {
+                font-size: 5.5rem;
+            }
+            .big-love-text {
+                font-size: 2rem;
+            }
+            .big-love-sub {
+                font-size: 1rem;
+            }
+            #iloveyou .card {
+                padding: 2rem 1.2rem;
+            }
         }
 
         @media (max-width: 400px) {
             .photo-frame {
-                max-width: 240px;
-                padding: 10px;
+                max-width: 260px;
+                padding: 12px;
             }
             .frame-corner {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
             }
             .card {
                 padding: 1.5rem 1rem;
+            }
+            .big-love {
+                font-size: 4.5rem;
+            }
+            .big-love-text {
+                font-size: 1.6rem;
+            }
+            #welcome .welcome-title {
+                font-size: 1.6rem;
+            }
+            #welcome .welcome-sub {
+                font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- WELCOME -->
+    <!-- ============================================================ -->
+    <!-- HALAMAN 1: WELCOME (FIX: LOVE GA NYAMBUNG KE BAWAH) -->
+    <!-- ============================================================ -->
     <div id="welcome" class="page active">
         <div class="card">
-            <h1>Welcome To Love <span>💗 Web Kesayangan Fran 💗</span></h1>
-            <div class="sub-heart">❤ ✿ ❤ ✿ ❤</div>
+            <div class="welcome-title">Welcome To Love</div>
+            <span class="welcome-sub">💗 Web Kesayangan Fran 💗</span>
+            <span class="welcome-love">❤ ✿ ❤ ✿ ❤</span>
             <button class="btn" onclick="showLockscreen()">✨ Masuk ✨</button>
         </div>
     </div>
 
-    <!-- LOCK SCREEN -->
+    <!-- ============================================================ -->
+    <!-- HALAMAN 2: LOCK SCREEN PIN -->
+    <!-- ============================================================ -->
     <div id="lockscreen" class="page">
         <div class="card">
             <h2>🔐 Masukkan PIN <span>💖 Khusus buat cewe kesayangan Fran 💖</span></h2>
-            <div class="sub-heart" style="font-size:1.2rem; margin-bottom:0.8rem;">❤ ✿ ❤</div>
+            <div class="sub-heart" style="font-size:1.2rem; margin-bottom:0.8rem; letter-spacing:10px;">❤ ✿ ❤</div>
             <div class="pin-display" id="pinDisplay">— — — — — — — —</div>
             <div class="pin-grid">
                 <button class="pin-btn" onclick="pinInput('1')">1</button>
@@ -704,7 +850,9 @@
         </div>
     </div>
 
-    <!-- AMPLOP -->
+    <!-- ============================================================ -->
+    <!-- HALAMAN 3: AMPLOP -->
+    <!-- ============================================================ -->
     <div id="envelope" class="page">
         <div class="card">
             <h2>💌 Ada Surat Untukmu</h2>
@@ -726,14 +874,17 @@
         </div>
     </div>
 
-    <!-- ROMANTIC SLIDE -->
+    <!-- ============================================================ -->
+    <!-- HALAMAN 4: ROMANTIC SLIDE (3 SLIDE) -->
+    <!-- ============================================================ -->
     <div id="romantic" class="page">
         <div class="card">
             <h2>💖 Untuk Cewe Kesayangan Fran 💖</h2>
-            <p class="sub-romantic">✨ Dua kenangan indah untukmu ✨</p>
+            <p class="sub-romantic">✨ Tiga kenangan indah untukmu ✨</p>
             <div class="slide-indicator">
                 <span class="dot active" id="dot1"></span>
                 <span class="dot" id="dot2"></span>
+                <span class="dot" id="dot3"></span>
             </div>
 
             <!-- SLIDE 1 - FOTO 1 -->
@@ -781,20 +932,76 @@
                 </div>
                 <div class="slide-nav">
                     <button class="btn-nav btn-nav-secondary" onclick="prevSlide()">⬅ Sebelumnya</button>
-                    <button class="btn-nav" onclick="showPage('envelope')">💕 Kembali ke Amplop</button>
+                    <button class="btn-nav" onclick="nextSlide()">➜ Selanjutnya</button>
+                </div>
+            </div>
+
+            <!-- SLIDE 3 - TERIMA KASIH -->
+            <div class="slide-photo" id="slide3">
+                <div class="photo-frame" style="max-width:450px;">
+                    <span class="frame-corner tl">💖</span>
+                    <span class="frame-corner tr">🌹</span>
+                    <span class="frame-corner bl">💕</span>
+                    <span class="frame-corner br">✨</span>
+                    <div class="photo-frame-inner" style="background:linear-gradient(135deg, #fce4ec, #f8bbd0); display:flex; align-items:center; justify-content:center; padding:2rem;">
+                        <div style="font-size:3rem; text-align:center; color:#b3415c; font-weight:600; line-height:1.6;">
+                            🙏<br />
+                            <span style="font-size:1.6rem;">Terima Kasih</span><br />
+                            <span style="font-size:1.3rem; display:block; margin-top:0.5rem;">Sayangku</span>
+                            <span style="font-size:1.8rem; display:block; margin-top:0.3rem;">💕</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="romantic-quotes">
+                    <p>💖 Terima kasih sayangku telah menerima aku sepenuhnya,</p>
+                    <p>Makasih udah nemenin aku selama ini,</p>
+                    <p>Perhatiin aku sayang, ke aku cinta ke aku,</p>
+                    <p>Dan selalu jaga aku walaupun dari jauh,</p>
+                    <span class="heart-divider">💗 ✨ 💖</span>
+                    <p>Makasih juga sudah buat aku jadi laki-laki bahagia ya sayang.</p>
+                    <span class="heart-divider">🌹 💕 🌹</span>
+                    <p class="signature">💌 Dari pacarmu yang selalu bersyukur,<br /><span style="font-size:1.3rem;">💗 Fran 💗</span></p>
+                </div>
+                <div class="slide-nav">
+                    <button class="btn-nav btn-nav-secondary" onclick="prevSlide()">⬅ Sebelumnya</button>
+                    <button class="btn-nav" onclick="showILoveYou()">💖 I Love You More 💖</button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- ============================================================ -->
+    <!-- HALAMAN 5: I LOVE YOU MORE (FIX: GA NYAMBUNG KE BAWAH) -->
+    <!-- ============================================================ -->
+    <div id="iloveyou" class="page">
+        <div class="card">
+            <div class="big-love-wrapper">
+                <span class="big-love">❤️</span>
+                <div class="big-love-text">I Love You More</div>
+                <div class="big-love-sub">Always & Forever 💕</div>
+            </div>
+            <div style="margin-top:1.8rem; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+                <button class="btn" onclick="showPage('welcome')" style="font-size:1rem; padding:0.7rem 2rem; background:rgba(255,255,255,0.3); color:#b3415c; box-shadow:none; border:1px solid rgba(255,255,255,0.4);">
+                    💕 Kembali ke Awal
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // ================================================================
+        // VARIABLES
+        // ================================================================
         const CORRECT_PIN = '14072026';
         let pinEntered = '';
         let wrongAttempts = 0;
         const MAX_WRONG = 3;
         let currentSlide = 1;
-        const totalSlides = 2;
+        const totalSlides = 3;
 
+        // ================================================================
+        // NAVIGASI HALAMAN
+        // ================================================================
         function showPage(pageId) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
@@ -817,14 +1024,22 @@
             updateSlide();
         }
 
+        function showILoveYou() {
+            showPage('iloveyou');
+        }
+
         function openEnvelope() {
             showRomantic();
         }
 
+        // ================================================================
+        // NAVIGASI SLIDE
+        // ================================================================
         function updateSlide() {
             document.querySelectorAll('.slide-photo').forEach(s => s.classList.remove('active'));
             const slide = document.getElementById('slide' + currentSlide);
             if (slide) slide.classList.add('active');
+
             document.querySelectorAll('.dot').forEach((dot, index) => {
                 dot.classList.toggle('active', index + 1 === currentSlide);
             });
@@ -844,6 +1059,9 @@
             }
         }
 
+        // ================================================================
+        // FUNGSI PIN
+        // ================================================================
         function pinInput(digit) {
             if (pinEntered.length >= 8) return;
             pinEntered += digit;
