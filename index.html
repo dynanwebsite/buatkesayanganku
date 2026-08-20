@@ -135,9 +135,7 @@
             display: flex;
         }
 
-        /* ============================================================ */
         /* WELCOME */
-        /* ============================================================ */
         #welcome .welcome-title {
             font-size: 2.8rem;
             font-weight: 700;
@@ -193,9 +191,7 @@
             transform: scale(0.96);
         }
 
-        /* ============================================================ */
         /* LOCK SCREEN */
-        /* ============================================================ */
         #lockscreen .card h2 {
             font-size: 2.2rem;
             color: #b3415c;
@@ -313,9 +309,7 @@
             color: #2e7d32;
         }
 
-        /* ============================================================ */
         /* AMPLOP */
-        /* ============================================================ */
         #envelope .card h2 {
             font-size: 2.2rem;
             color: #b3415c;
@@ -411,9 +405,7 @@
             }
         }
 
-        /* ============================================================ */
         /* ROMANTIC SLIDE */
-        /* ============================================================ */
         .slide-photo {
             display: none;
         }
@@ -550,9 +542,7 @@
             margin-top: 0.5rem;
         }
 
-        /* ============================================================ */
         /* I LOVE YOU MORE */
-        /* ============================================================ */
         #iloveyou {
             background: transparent;
         }
@@ -577,11 +567,7 @@
             font-size: 9rem;
             line-height: 1;
             color: #ffffff;
-            text-shadow: 
-                0 0 30px rgba(255, 255, 255, 0.9),
-                0 0 60px rgba(255, 255, 255, 0.6),
-                0 0 100px rgba(255, 255, 255, 0.4),
-                0 0 150px rgba(255, 255, 255, 0.2);
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 60px rgba(255, 255, 255, 0.6), 0 0 100px rgba(255, 255, 255, 0.4), 0 0 150px rgba(255, 255, 255, 0.2);
             animation: loveGlow 1.8s ease-in-out infinite alternate;
             display: inline-block;
             margin: 0;
@@ -589,21 +575,14 @@
 
         @keyframes loveGlow {
             0% {
-                text-shadow: 
-                    0 0 20px rgba(255, 255, 255, 0.6),
-                    0 0 40px rgba(255, 255, 255, 0.3),
-                    0 0 60px rgba(255, 255, 255, 0.1);
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.1);
                 transform: scale(1);
             }
             50% {
                 transform: scale(1.12);
             }
             100% {
-                text-shadow: 
-                    0 0 40px rgba(255, 255, 255, 1),
-                    0 0 80px rgba(255, 255, 255, 0.7),
-                    0 0 120px rgba(255, 255, 255, 0.5),
-                    0 0 180px rgba(255, 255, 255, 0.3);
+                text-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 80px rgba(255, 255, 255, 0.7), 0 0 120px rgba(255, 255, 255, 0.5), 0 0 180px rgba(255, 255, 255, 0.3);
                 transform: scale(1.06);
             }
         }
@@ -627,9 +606,7 @@
             line-height: 1.4;
         }
 
-        /* ============================================================ */
         /* NAVIGASI SLIDE */
-        /* ============================================================ */
         .slide-nav {
             display: flex;
             justify-content: center;
@@ -674,17 +651,6 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         }
 
-        .slide-nav .btn-nav-white {
-            background: rgba(255, 255, 255, 0.25);
-            color: #fff;
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
-        }
-
-        .slide-nav .btn-nav-white:hover {
-            background: rgba(255, 255, 255, 0.4);
-            transform: translateY(-3px) scale(1.03);
-        }
-
         .slide-indicator {
             display: flex;
             justify-content: center;
@@ -706,23 +672,18 @@
             box-shadow: 0 0 20px rgba(238, 78, 107, 0.3);
         }
 
-        /* ============================================================ */
-        /* AUDIO PLAYER - SEMBUNYI + LOOP */
-        /* ============================================================ */
+        /* AUDIO - SEMBUNYI */
         #bgMusic {
             display: none;
         }
 
-        /* ============================================================ */
         /* RESPONSIF */
-        /* ============================================================ */
         @media (max-width: 600px) {
             .card {
                 padding: 1.8rem 1.2rem;
                 border-radius: 32px;
                 max-width: 97%;
             }
-
             #welcome .welcome-title {
                 font-size: 2rem;
                 margin-bottom: 0.3rem;
@@ -740,7 +701,6 @@
                 padding: 0.8rem 2.5rem;
                 font-size: 1.1rem;
             }
-
             .photo-frame {
                 max-width: 95%;
                 padding: 14px;
@@ -748,7 +708,6 @@
             .frame-corner {
                 font-size: 1.8rem;
             }
-
             .slide-nav {
                 gap: 10px;
                 padding: 0.5rem 0;
@@ -758,14 +717,12 @@
                 font-size: 1rem;
                 min-width: 100px;
             }
-
             .romantic-quotes p {
                 font-size: 0.95rem;
             }
             #romantic .card h2 {
                 font-size: 1.6rem;
             }
-
             .big-love {
                 font-size: 5.5rem;
             }
@@ -778,7 +735,6 @@
             #iloveyou .card {
                 padding: 1.8rem 1.2rem;
             }
-
             .pin-grid {
                 gap: 8px;
                 max-width: 230px;
@@ -840,14 +796,17 @@
 <body>
 
     <!-- ============================================================ -->
-    <!-- AUDIO - LOOP OTOMATIS (GANTI LINK GITHUB) -->
+    <!-- 🎵 AUDIO - GANTI LINK DI BAWAH INI! -->
     <!-- ============================================================ -->
-    <audio id="bgMusic" loop autoplay>
+    <audio id="bgMusic" loop>
         <!-- 
-            ⚠️ GANTI src="..." DENGAN LINK GITHUB KAMU!
-            Contoh: https://raw.githubusercontent.com/username/repo/main/fran.mp3
+            ⚠️⚠️⚠️ GANTI LINK DI BAWAH INI ⚠️⚠️⚠️
             
-            ⚠️ JANGAN LUPA UPLOAD FILE fran.mp3 KE GITHUB!
+            Copy link RAW dari file fran.mp3 di GitHub kamu.
+            Caranya: buka repo GitHub → klik file fran.mp3 → klik "Raw" → copy link!
+            
+            Contoh:
+            https://raw.githubusercontent.com/username/repo/main/fran.mp3
         -->
         <source src="https://raw.githubusercontent.com/username/repo/main/fran.mp3" type="audio/mpeg" />
         Browser tidak mendukung audio.
@@ -866,7 +825,7 @@
     </div>
 
     <!-- ============================================================ -->
-    <!-- LOCK SCREEN PIN -->
+    <!-- LOCK SCREEN -->
     <!-- ============================================================ -->
     <div id="lockscreen" class="page">
         <div class="card">
@@ -932,7 +891,7 @@
                 <span class="dot" id="dot3"></span>
             </div>
 
-            <!-- SLIDE 1 - FOTO 1 -->
+            <!-- SLIDE 1 -->
             <div class="slide-photo active" id="slide1">
                 <div class="photo-frame">
                     <span class="frame-corner tl">❤️</span>
@@ -956,7 +915,7 @@
                 </div>
             </div>
 
-            <!-- SLIDE 2 - FOTO 2 -->
+            <!-- SLIDE 2 -->
             <div class="slide-photo" id="slide2">
                 <div class="photo-frame">
                     <span class="frame-corner tl">💖</span>
@@ -981,7 +940,7 @@
                 </div>
             </div>
 
-            <!-- SLIDE 3 - TERIMA KASIH -->
+            <!-- SLIDE 3 -->
             <div class="slide-photo" id="slide3">
                 <div class="photo-frame" style="max-width:520px;">
                     <span class="frame-corner tl">💖</span>
@@ -1084,7 +1043,6 @@
             document.querySelectorAll('.slide-photo').forEach(s => s.classList.remove('active'));
             const slide = document.getElementById('slide' + currentSlide);
             if (slide) slide.classList.add('active');
-
             document.querySelectorAll('.dot').forEach((dot, index) => {
                 dot.classList.toggle('active', index + 1 === currentSlide);
             });
@@ -1160,11 +1118,12 @@
                 wrongAttempts = 0;
 
                 // ============================================================
-                // PUTAR LAGU OTOMATIS SAAT PIN BENAR!
+                // 🎵 PUTAR LAGU PAS PIN BERHASIL!
                 // ============================================================
                 const audio = document.getElementById('bgMusic');
-                audio.play().catch(function(error) {
-                    console.log('Autoplay diblokir browser, klik layar untuk putar');
+                audio.play().catch(() => {
+                    // Kalo autoplay diblokir, kasih tau user
+                    alert('⚠️ Klik layar untuk memutar lagu ya sayang! 💕');
                 });
 
                 setTimeout(() => {
@@ -1190,14 +1149,12 @@
         }
 
         // ================================================================
-        // KLIK DI MANA SAJA UNTUK MULAI LAGU (BYPASS AUTOPLAY)
+        // KLIK DI MANA SAJA BUAT MULAI LAGU (BYPASS AUTOPLAY)
         // ================================================================
         document.addEventListener('click', function() {
             const audio = document.getElementById('bgMusic');
             if (audio.paused) {
-                audio.play().catch(function(error) {
-                    console.log('Gagal putar audio');
-                });
+                audio.play().catch(() => {});
             }
         });
 
