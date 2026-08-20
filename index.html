@@ -15,13 +15,16 @@
         html,
         body {
             min-height: 100vh;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             font-family: 'Segoe UI', 'Arial', sans-serif;
             background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fdfcfb 100%);
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding: 20px 10px;
         }
 
         body::before {
@@ -94,7 +97,6 @@
             }
         }
 
-        /* ===== CARD ===== */
         .card {
             position: relative;
             z-index: 1;
@@ -134,7 +136,9 @@
             display: flex;
         }
 
-        /* ===== WELCOME - LOVE GA NYAMBUNG ===== */
+        /* ============================================================ */
+        /* WELCOME - FIX: LOVE GA NYAMBUNG KE BAWAH */
+        /* ============================================================ */
         #welcome .welcome-title {
             font-size: 2.8rem;
             font-weight: 700;
@@ -149,18 +153,20 @@
             font-size: 2.2rem;
             color: #d94f6e;
             font-weight: 600;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.1rem;
             display: block;
             line-height: 1.3;
         }
 
         #welcome .welcome-love {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             color: #e05a7a;
             opacity: 0.7;
-            margin-bottom: 1.8rem;
-            letter-spacing: 14px;
+            margin-bottom: 1.5rem;
+            margin-top: 0.1rem;
+            letter-spacing: 16px;
             display: block;
+            line-height: 1.4;
         }
 
         .btn {
@@ -189,7 +195,9 @@
             transform: scale(0.96);
         }
 
-        /* ===== LOCK SCREEN ===== */
+        /* ============================================================ */
+        /* LOCK SCREEN */
+        /* ============================================================ */
         #lockscreen .card h2 {
             font-size: 2.2rem;
             color: #b3415c;
@@ -307,7 +315,9 @@
             color: #2e7d32;
         }
 
-        /* ===== AMPLOP ===== */
+        /* ============================================================ */
+        /* AMPLOP */
+        /* ============================================================ */
         #envelope .card h2 {
             font-size: 2.2rem;
             color: #b3415c;
@@ -403,7 +413,9 @@
             }
         }
 
-        /* ===== ROMANTIC SLIDE ===== */
+        /* ============================================================ */
+        /* ROMANTIC SLIDE */
+        /* ============================================================ */
         .slide-photo {
             display: none;
         }
@@ -426,7 +438,6 @@
             font-style: italic;
         }
 
-        /* ===== BINGKAI BESAR (MAX 520px) ===== */
         .photo-frame {
             position: relative;
             width: 100%;
@@ -541,7 +552,9 @@
             margin-top: 0.5rem;
         }
 
-        /* ===== I LOVE YOU MORE ===== */
+        /* ============================================================ */
+        /* I LOVE YOU MORE */
+        /* ============================================================ */
         #iloveyou {
             background: transparent;
         }
@@ -616,7 +629,9 @@
             line-height: 1.4;
         }
 
-        /* ===== NAVIGASI SLIDE - TOMBOL KELIHATAN DI HP ===== */
+        /* ============================================================ */
+        /* NAVIGASI SLIDE - TOMBOL KELIHATAN DI HP */
+        /* ============================================================ */
         .slide-nav {
             display: flex;
             justify-content: center;
@@ -694,7 +709,9 @@
             box-shadow: 0 0 20px rgba(238, 78, 107, 0.3);
         }
 
-        /* ===== RESPONSIF HP ===== */
+        /* ============================================================ */
+        /* RESPONSIF HP */
+        /* ============================================================ */
         @media (max-width: 600px) {
             .card {
                 padding: 1.8rem 1.2rem;
@@ -702,23 +719,26 @@
                 max-width: 97%;
             }
 
-            /* Welcome */
+            /* Welcome - FIX LOVE GA NYAMBUNG */
             #welcome .welcome-title {
                 font-size: 2rem;
             }
             #welcome .welcome-sub {
                 font-size: 1.5rem;
+                margin-bottom: 0.1rem;
             }
             #welcome .welcome-love {
-                font-size: 1.3rem;
-                letter-spacing: 10px;
+                font-size: 1.4rem;
+                letter-spacing: 12px;
+                margin-bottom: 1.2rem;
+                margin-top: 0.1rem;
             }
             .btn {
                 padding: 0.8rem 2.5rem;
                 font-size: 1.1rem;
             }
 
-            /* Bingkai - BESAR DI HP */
+            /* Bingkai */
             .photo-frame {
                 max-width: 95%;
                 padding: 14px;
@@ -727,7 +747,7 @@
                 font-size: 1.8rem;
             }
 
-            /* Tombol - BESAR & KELIHATAN */
+            /* Tombol */
             .slide-nav {
                 gap: 10px;
                 padding: 0.5rem 0;
@@ -805,6 +825,10 @@
             #welcome .welcome-sub {
                 font-size: 1.2rem;
             }
+            #welcome .welcome-love {
+                font-size: 1.2rem;
+                letter-spacing: 8px;
+            }
             .slide-nav .btn-nav {
                 padding: 0.7rem 1.2rem;
                 font-size: 0.9rem;
@@ -816,12 +840,12 @@
 <body>
 
     <!-- ============================================================ -->
-    <!-- HALAMAN 1: WELCOME -->
+    <!-- HALAMAN 1: WELCOME (FIX: LOVE RAPI) -->
     <!-- ============================================================ -->
     <div id="welcome" class="page active">
         <div class="card">
             <span class="welcome-title">Welcome To Love</span>
-            <span class="welcome-sub">💗Web Kesayangan Fran💗</span>
+            <span class="welcome-sub">💗 Web Kesayangan Fran 💗</span>
             <span class="welcome-love">❤ ✿ ❤ ✿ ❤</span>
             <button class="btn" onclick="showLockscreen()">✨ Masuk ✨</button>
         </div>
@@ -943,7 +967,7 @@
                 </div>
             </div>
 
-            <!-- SLIDE 3 - TERIMA KASIH (TOMBOL KELIHATAN) -->
+            <!-- SLIDE 3 - TERIMA KASIH -->
             <div class="slide-photo" id="slide3">
                 <div class="photo-frame" style="max-width:520px;">
                     <span class="frame-corner tl">💖</span>
