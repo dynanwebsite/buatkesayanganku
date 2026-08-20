@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Kesayangan Fran</title>
     <style>
-        /* ----- RESET & BODY ----- */
         * {
             margin: 0;
             padding: 0;
@@ -24,7 +23,6 @@
             overflow: hidden;
         }
 
-        /* ----- BACKGROUND BERGERAK (Love & Bunga) ----- */
         body::before {
             content: '';
             position: fixed;
@@ -95,7 +93,6 @@
             }
         }
 
-        /* ----- CARD (semua halaman) ----- */
         .card {
             position: relative;
             z-index: 1;
@@ -124,7 +121,6 @@
             }
         }
 
-        /* ----- SEMUA HALAMAN (sembunyi/tampil) ----- */
         .page {
             display: none;
             width: 100%;
@@ -136,9 +132,7 @@
             display: flex;
         }
 
-        /* ============================================================ */
-        /* WELCOME PAGE */
-        /* ============================================================ */
+        /* WELCOME */
         #welcome h1 {
             font-size: 2.8rem;
             font-weight: 700;
@@ -163,7 +157,6 @@
             letter-spacing: 14px;
         }
 
-        /* ----- TOMBOL ----- */
         .btn {
             display: inline-block;
             padding: 1rem 3.5rem;
@@ -190,14 +183,7 @@
             transform: scale(0.96);
         }
 
-        .btn-small {
-            padding: 0.8rem 2.5rem;
-            font-size: 1.1rem;
-        }
-
-        /* ============================================================ */
         /* LOCK SCREEN */
-        /* ============================================================ */
         #lockscreen .card h2 {
             font-size: 2.2rem;
             color: #b3415c;
@@ -315,9 +301,7 @@
             color: #2e7d32;
         }
 
-        /* ============================================================ */
         /* AMPLOP */
-        /* ============================================================ */
         #envelope .card h2 {
             font-size: 2.2rem;
             color: #b3415c;
@@ -413,9 +397,7 @@
             }
         }
 
-        /* ============================================================ */
-        /* SLIDE FOTO + KATA ROMANTIS */
-        /* ============================================================ */
+        /* SLIDE FOTO */
         .slide-photo {
             display: none;
         }
@@ -438,7 +420,6 @@
             font-style: italic;
         }
 
-        /* ----- BINGKAI FOTO (BESAR) ----- */
         .photo-frame {
             position: relative;
             width: 100%;
@@ -478,7 +459,6 @@
             display: block;
         }
 
-        /* Hiasan sudut bingkai */
         .frame-corner {
             position: absolute;
             font-size: 2.2rem;
@@ -518,7 +498,6 @@
             }
         }
 
-        /* ----- KATA ROMANTIS ----- */
         .romantic-quotes {
             margin: 0.5rem 0 1.2rem;
             padding: 1.2rem;
@@ -555,7 +534,6 @@
             margin-top: 0.5rem;
         }
 
-        /* ----- NAVIGASI SLIDE ----- */
         .slide-nav {
             display: flex;
             justify-content: center;
@@ -597,7 +575,6 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
         }
 
-        /* Indikator slide */
         .slide-indicator {
             display: flex;
             justify-content: center;
@@ -619,33 +596,26 @@
             box-shadow: 0 0 20px rgba(238, 78, 107, 0.3);
         }
 
-        /* ============================================================ */
-        /* RESPONSIF */
-        /* ============================================================ */
         @media (max-width: 600px) {
             .card {
                 padding: 2rem 1.5rem;
                 border-radius: 32px;
                 max-width: 95%;
             }
-
             #welcome h1 {
                 font-size: 2rem;
             }
             #welcome h1 span {
                 font-size: 1.5rem;
             }
-
             .btn {
                 padding: 0.8rem 2.5rem;
                 font-size: 1.1rem;
             }
-
             body::after {
                 font-size: 2rem;
                 letter-spacing: 16px;
             }
-
             .pin-grid {
                 gap: 8px;
                 max-width: 230px;
@@ -662,12 +632,10 @@
             #lockscreen .card h2 {
                 font-size: 1.6rem;
             }
-
             .envelope-svg {
                 width: 140px;
                 height: 110px;
             }
-
             .photo-frame {
                 max-width: 300px;
                 padding: 12px;
@@ -675,14 +643,12 @@
             .frame-corner {
                 font-size: 1.6rem;
             }
-
             .romantic-quotes p {
                 font-size: 0.95rem;
             }
             #romantic .card h2 {
                 font-size: 1.6rem;
             }
-
             .slide-nav .btn-nav {
                 padding: 0.6rem 1.8rem;
                 font-size: 0.9rem;
@@ -790,42 +756,30 @@
             <h2>💖 Untuk Cewe Kesayangan Fran 💖</h2>
             <p class="sub-romantic">✨ Dua kenangan indah untukmu ✨</p>
 
-            <!-- Indikator slide -->
             <div class="slide-indicator">
                 <span class="dot active" id="dot1"></span>
                 <span class="dot" id="dot2"></span>
             </div>
 
-            <!-- ===== SLIDE 1 ===== -->
+            <!-- SLIDE 1 -->
             <div class="slide-photo active" id="slide1">
                 <div class="photo-frame">
                     <span class="frame-corner tl">❤️</span>
                     <span class="frame-corner tr">🌸</span>
                     <span class="frame-corner bl">💕</span>
                     <span class="frame-corner br">✨</span>
-
                     <div class="photo-frame-inner">
-                        <!-- FOTO 1 -->
-                        <img src="https://i.postimg.cc/wMJrmssH/IMG-20260820-WA0012.jpg" alt="Foto 1" />
+                        <img src="https://i.postimg.cc/G2wDkFk8/IMG-20260820-WA0012.jpg" alt="Foto 1" />
                     </div>
                 </div>
 
                 <div class="romantic-quotes">
                     <p>🌹 Untuk cewe paling cantik,</p>
-                    <p>
-                        Senyummu adalah cahaya yang menerangi setiap hariku.
-                        Aku bersyukur bisa melihat senyum indah itu setiap hari.
-                    </p>
+                    <p>Senyummu adalah cahaya yang menerangi setiap hariku. Aku bersyukur bisa melihat senyum indah itu setiap hari.</p>
                     <span class="heart-divider">❤️ ✨ 💕</span>
-                    <p>
-                        Kamu membuat dunia ini terasa lebih berwarna.
-                        Di setiap langkahku, aku selalu membayangkan senyummu.
-                    </p>
+                    <p>Kamu membuat dunia ini terasa lebih berwarna. Di setiap langkahku, aku selalu membayangkan senyummu.</p>
                     <span class="heart-divider">💖 🌸 💖</span>
-                    <p class="signature">
-                        💌 Dari seseorang yang selalu menyayangimu,<br />
-                        <span style="font-size:1.3rem;">💗 Fran 💗</span>
-                    </p>
+                    <p class="signature">💌 Dari seseorang yang selalu menyayangimu,<br /><span style="font-size:1.3rem;">💗 Fran 💗</span></p>
                 </div>
 
                 <div class="slide-nav">
@@ -833,36 +787,25 @@
                 </div>
             </div>
 
-            <!-- ===== SLIDE 2 ===== -->
+            <!-- SLIDE 2 -->
             <div class="slide-photo" id="slide2">
                 <div class="photo-frame">
                     <span class="frame-corner tl">💖</span>
                     <span class="frame-corner tr">🌺</span>
                     <span class="frame-corner bl">💗</span>
                     <span class="frame-corner br">🌟</span>
-
                     <div class="photo-frame-inner">
-                        <!-- FOTO 2 -->
-                        <img src="https://i.postimg.cc/90VdL4n0/IMG-20260820-WA0013.jpg" alt="Foto 2" />
+                        <img src="https://i.postimg.cc/XvHG0xCP/IMG-20260820-WA0013.jpg" alt="Foto 2" />
                     </div>
                 </div>
 
                 <div class="romantic-quotes">
                     <p>💕 Untuk cewe terbaik di dunia,</p>
-                    <p>
-                        Setiap hari bersamamu adalah hadiah terindah.
-                        Terima kasih sudah menjadi bagian dari cerita hidupku.
-                    </p>
+                    <p>Setiap hari bersamamu adalah hadiah terindah. Terima kasih sudah menjadi bagian dari cerita hidupku.</p>
                     <span class="heart-divider">💗 ✨ 💖</span>
-                    <p>
-                        Aku ingin menghabiskan sisa hidupku bersamamu.
-                        Karena kamu adalah segalanya bagiku.
-                    </p>
+                    <p>Aku ingin menghabiskan sisa hidupku bersamamu. Karena kamu adalah segalanya bagiku.</p>
                     <span class="heart-divider">🌹 💕 🌹</span>
-                    <p class="signature">
-                        💌 I Love You More Than Words Can Say,<br />
-                        <span style="font-size:1.3rem;">💗 Fran 💗</span>
-                    </p>
+                    <p class="signature">💌 I Love You More Than Words Can Say,<br /><span style="font-size:1.3rem;">💗 Fran 💗</span></p>
                 </div>
 
                 <div class="slide-nav">
@@ -874,9 +817,6 @@
     </div>
 
     <script>
-        // ================================================================
-        // VARIABLES
-        // ================================================================
         const CORRECT_PIN = '14072026';
         let pinEntered = '';
         let wrongAttempts = 0;
@@ -884,9 +824,6 @@
         let currentSlide = 1;
         const totalSlides = 2;
 
-        // ================================================================
-        // NAVIGASI HALAMAN
-        // ================================================================
         function showPage(pageId) {
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
@@ -913,9 +850,6 @@
             showRomantic();
         }
 
-        // ================================================================
-        // NAVIGASI SLIDE
-        // ================================================================
         function updateSlide() {
             document.querySelectorAll('.slide-photo').forEach(s => s.classList.remove('active'));
             const slide = document.getElementById('slide' + currentSlide);
@@ -940,9 +874,6 @@
             }
         }
 
-        // ================================================================
-        // FUNGSI PIN
-        // ================================================================
         function pinInput(digit) {
             if (pinEntered.length >= 8) return;
             pinEntered += digit;
@@ -1022,9 +953,6 @@
             updatePinDisplay();
         }
 
-        // ================================================================
-        // KEYBOARD SUPPORT
-        // ================================================================
         document.addEventListener('keydown', function(e) {
             const lockActive = document.getElementById('lockscreen').classList.contains('active');
             if (!lockActive) return;
@@ -1040,6 +968,5 @@
             }
         });
     </script>
-
 </body>
 </html>
