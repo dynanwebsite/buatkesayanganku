@@ -94,7 +94,7 @@
             }
         }
 
-        /* ----- CARD (Welcome & Lock Screen pakai class yang sama) ----- */
+        /* ----- CARD (semua halaman) ----- */
         .card {
             position: relative;
             z-index: 1;
@@ -108,7 +108,7 @@
             text-align: center;
             box-shadow: 0 20px 60px rgba(255, 80, 120, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
             border: 1px solid rgba(255, 255, 255, 0.3);
-            animation: cardIn 1s ease-out;
+            animation: cardIn 0.6s ease-out;
         }
 
         @keyframes cardIn {
@@ -122,24 +122,33 @@
             }
         }
 
-        .card h1 {
+        /* ----- SEMUA HALAMAN (sembunyi/tampil) ----- */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* ----- WELCOME PAGE ----- */
+        #welcome h1 {
             font-size: 2.8rem;
             font-weight: 700;
             color: #b3415c;
             text-shadow: 0 4px 20px rgba(255, 80, 120, 0.2);
             margin-bottom: 0.2rem;
             letter-spacing: -0.5px;
-            word-break: break-word;
         }
 
-        .card h1 span {
+        #welcome h1 span {
             display: block;
             font-size: 2.2rem;
             color: #d94f6e;
             margin-top: 0.1rem;
         }
 
-        .card .sub-heart {
+        .sub-heart {
             font-size: 1.8rem;
             color: #e05a7a;
             opacity: 0.7;
@@ -148,7 +157,7 @@
         }
 
         /* ----- TOMBOL ----- */
-        .btn-masuk {
+        .btn {
             display: inline-block;
             padding: 1rem 3.5rem;
             background: linear-gradient(135deg, #ff6b8a, #ee4e6b);
@@ -164,52 +173,58 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        .btn-masuk:hover {
+        .btn:hover {
             transform: translateY(-4px) scale(1.03);
             box-shadow: 0 18px 40px rgba(238, 78, 107, 0.5);
             background: linear-gradient(135deg, #ff7a96, #e04765);
         }
 
-        .btn-masuk:active {
+        .btn:active {
             transform: scale(0.96);
         }
 
         /* ----- LOCK SCREEN ----- */
-        .lock-screen {
-            display: none;
-            /* sembunyi dulu */
+        #lockscreen h2 {
+            font-size: 2.2rem;
+            color: #b3415c;
+            margin-bottom: 0.3rem;
         }
 
-        .lock-screen.active {
+        #lockscreen h2 span {
             display: block;
+            font-size: 1.2rem;
+            color: #d94f6e;
+            margin-top: 0.2rem;
+            font-weight: 400;
         }
 
-        .lock-screen .pin-display {
+        .pin-display {
             font-size: 2.5rem;
             letter-spacing: 16px;
             color: #b3415c;
             background: rgba(255, 255, 255, 0.4);
             padding: 0.6rem 1rem;
             border-radius: 20px;
-            margin-bottom: 1.5rem;
-            min-height: 80px;
+            margin: 1rem auto 1.5rem;
+            min-height: 75px;
             display: flex;
             align-items: center;
             justify-content: center;
             border: 2px dashed rgba(180, 60, 90, 0.2);
             font-weight: 600;
+            max-width: 350px;
         }
 
         .pin-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            max-width: 320px;
-            margin: 0 auto 1.2rem;
+            gap: 12px;
+            max-width: 300px;
+            margin: 0 auto 1rem;
         }
 
         .pin-btn {
-            padding: 1.1rem 0;
+            padding: 1rem 0;
             font-size: 1.8rem;
             font-weight: 600;
             background: rgba(255, 255, 255, 0.5);
@@ -239,21 +254,16 @@
             pointer-events: none;
         }
 
-        .pin-btn.empty:hover {
-            transform: none;
-            background: transparent;
-        }
-
         .pin-actions {
             display: flex;
             justify-content: center;
-            gap: 16px;
-            margin-top: 0.5rem;
+            gap: 14px;
+            margin: 0.5rem 0 1rem;
             flex-wrap: wrap;
         }
 
         .pin-actions button {
-            padding: 0.6rem 2rem;
+            padding: 0.6rem 1.8rem;
             border: none;
             border-radius: 40px;
             font-size: 1rem;
@@ -272,43 +282,155 @@
         }
 
         .pin-actions .btn-clear {
-            background: rgba(255, 100, 100, 0.2);
+            background: rgba(255, 100, 100, 0.15);
         }
 
         .pin-actions .btn-clear:hover {
-            background: rgba(255, 100, 100, 0.4);
+            background: rgba(255, 100, 100, 0.3);
         }
 
-        .lock-screen .error-msg {
+        .pin-error {
             color: #d94f4f;
-            font-size: 0.95rem;
-            margin-top: 0.8rem;
-            min-height: 2.2rem;
+            font-size: 1rem;
+            min-height: 2.4rem;
             font-weight: 500;
+            padding: 0.3rem;
         }
 
-        /* ----- WELCOME (default tampil) ----- */
-        .welcome-screen {
+        .pin-error.success {
+            color: #2e7d32;
+        }
+
+        /* ----- AMPLOP PAGE ----- */
+        #envelope h2 {
+            font-size: 2rem;
+            color: #b3415c;
+            margin-bottom: 0.3rem;
+        }
+
+        #envelope .sub-text {
+            color: #8a4a5a;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .envelope-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem 0 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .envelope-container:hover {
+            transform: scale(1.05);
+        }
+
+        .envelope-container:active {
+            transform: scale(0.95);
+        }
+
+        .envelope-svg {
+            width: 180px;
+            height: 140px;
+            filter: drop-shadow(0 8px 25px rgba(180, 60, 90, 0.25));
+        }
+
+        .envelope-svg .envelope-body {
+            fill: #f5a0b5;
+            stroke: #d97a92;
+            stroke-width: 2;
+            transition: fill 0.3s;
+        }
+
+        .envelope-container:hover .envelope-body {
+            fill: #f8b0c5;
+        }
+
+        .envelope-svg .envelope-flap {
+            fill: #f0d0d8;
+            stroke: #d97a92;
+            stroke-width: 2;
+        }
+
+        .envelope-svg .envelope-heart {
+            fill: #e8456a;
+            transform-origin: center;
+            animation: heartBeat 1.8s ease-in-out infinite;
+        }
+
+        @keyframes heartBeat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            15% {
+                transform: scale(1.2);
+            }
+            30% {
+                transform: scale(1);
+            }
+            45% {
+                transform: scale(1.15);
+            }
+            60% {
+                transform: scale(1);
+            }
+        }
+
+        .click-hint {
+            color: #b3415c;
+            font-size: 0.95rem;
+            opacity: 0.7;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* ----- SLIDE (halaman setelah amplop) ----- */
+        #slide h2 {
+            font-size: 2.2rem;
+            color: #b3415c;
+            margin-bottom: 1rem;
+        }
+
+        #slide .love-message {
+            font-size: 1.2rem;
+            color: #5a3a4a;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            padding: 0 0.5rem;
+        }
+
+        #slide .love-message .heart-big {
+            font-size: 2.5rem;
             display: block;
-        }
-
-        .welcome-screen.hidden {
-            display: none;
+            margin: 0.5rem 0;
         }
 
         /* ----- RESPONSIF ----- */
         @media (max-width: 600px) {
             .card {
-                padding: 2.5rem 1.8rem;
+                padding: 2rem 1.5rem;
                 border-radius: 32px;
             }
-            .card h1 {
+            #welcome h1 {
                 font-size: 2rem;
             }
-            .card h1 span {
+            #welcome h1 span {
                 font-size: 1.6rem;
             }
-            .btn-masuk {
+            .btn {
                 padding: 0.8rem 2.5rem;
                 font-size: 1.2rem;
             }
@@ -318,10 +440,10 @@
             }
             .pin-grid {
                 gap: 10px;
-                max-width: 260px;
+                max-width: 250px;
             }
             .pin-btn {
-                padding: 0.9rem 0;
+                padding: 0.8rem 0;
                 font-size: 1.5rem;
             }
             .pin-display {
@@ -329,66 +451,166 @@
                 letter-spacing: 12px;
                 min-height: 60px;
             }
+            #lockscreen h2 {
+                font-size: 1.6rem;
+            }
+            .envelope-svg {
+                width: 140px;
+                height: 110px;
+            }
+            #slide h2 {
+                font-size: 1.8rem;
+            }
+            #slide .love-message {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ====== WELCOME SCREEN ====== -->
-    <div id="welcomeScreen" class="card welcome-screen">
-        <h1>
-            Welcome To Love
-            <span>💗 Web Kesayangan Fran 💗</span>
-        </h1>
-        <div class="sub-heart">❤ ✿ ❤ ✿ ❤</div>
-        <button class="btn-masuk" onclick="showLockScreen()">✨ Masuk ✨</button>
+    <!-- ============================================================ -->
+    <!-- HALAMAN 1: WELCOME -->
+    <!-- ============================================================ -->
+    <div id="welcome" class="page active">
+        <div class="card">
+            <h1>
+                Welcome To Love
+                <span>💗 Web Kesayangan Fran 💗</span>
+            </h1>
+            <div class="sub-heart">❤ ✿ ❤ ✿ ❤</div>
+            <button class="btn" onclick="showLockscreen()">✨ Masuk ✨</button>
+        </div>
     </div>
 
-    <!-- ====== LOCK SCREEN PIN ====== -->
-    <div id="lockScreen" class="card lock-screen">
-        <h1 style="font-size:2rem;">
-            🔐 Masukkan PIN
-            <span style="font-size:1.2rem; color:#b3415c; margin-top:0.3rem;">💖 Untuk Fran Tercinta 💖</span>
-        </h1>
-        <div class="sub-heart" style="font-size:1.2rem; margin-bottom:1.2rem;">❤ ✿ ❤</div>
+    <!-- ============================================================ -->
+    <!-- HALAMAN 2: LOCK SCREEN PIN -->
+    <!-- ============================================================ -->
+    <div id="lockscreen" class="page">
+        <div class="card">
+            <h2>
+                🔐 Masukkan PIN
+                <span>💖 Khusus untuk Fran 💖</span>
+            </h2>
+            <div class="sub-heart" style="font-size:1.2rem; margin-bottom:0.8rem;">❤ ✿ ❤</div>
 
-        <!-- Tampilan PIN -->
-        <div class="pin-display" id="pinDisplay">— — — — — — — —</div>
+            <div class="pin-display" id="pinDisplay">— — — — — — — —</div>
 
-        <!-- Grid PIN 1-9, 0, hapus -->
-        <div class="pin-grid">
-            <button class="pin-btn" onclick="pinInput('1')">1</button>
-            <button class="pin-btn" onclick="pinInput('2')">2</button>
-            <button class="pin-btn" onclick="pinInput('3')">3</button>
-            <button class="pin-btn" onclick="pinInput('4')">4</button>
-            <button class="pin-btn" onclick="pinInput('5')">5</button>
-            <button class="pin-btn" onclick="pinInput('6')">6</button>
-            <button class="pin-btn" onclick="pinInput('7')">7</button>
-            <button class="pin-btn" onclick="pinInput('8')">8</button>
-            <button class="pin-btn" onclick="pinInput('9')">9</button>
-            <button class="pin-btn empty"></button>
-            <button class="pin-btn" onclick="pinInput('0')">0</button>
-            <button class="pin-btn" onclick="pinClear()">⌫</button>
+            <div class="pin-grid">
+                <button class="pin-btn" onclick="pinInput('1')">1</button>
+                <button class="pin-btn" onclick="pinInput('2')">2</button>
+                <button class="pin-btn" onclick="pinInput('3')">3</button>
+                <button class="pin-btn" onclick="pinInput('4')">4</button>
+                <button class="pin-btn" onclick="pinInput('5')">5</button>
+                <button class="pin-btn" onclick="pinInput('6')">6</button>
+                <button class="pin-btn" onclick="pinInput('7')">7</button>
+                <button class="pin-btn" onclick="pinInput('8')">8</button>
+                <button class="pin-btn" onclick="pinInput('9')">9</button>
+                <button class="pin-btn empty"></button>
+                <button class="pin-btn" onclick="pinInput('0')">0</button>
+                <button class="pin-btn" onclick="pinClear()">⌫</button>
+            </div>
+
+            <div class="pin-actions">
+                <button class="btn-clear" onclick="pinClearAll()">✕ Hapus</button>
+                <button onclick="pinSubmit()">✔ OK</button>
+            </div>
+
+            <div class="pin-error" id="pinError"></div>
         </div>
+    </div>
 
-        <!-- Tombol Hapus & OK -->
-        <div class="pin-actions">
-            <button class="btn-clear" onclick="pinClearAll()">✕ Hapus</button>
-            <button onclick="pinSubmit()" style="background:rgba(255,100,150,0.3);">✔ OK</button>
+    <!-- ============================================================ -->
+    <!-- HALAMAN 3: AMPLOP -->
+    <!-- ============================================================ -->
+    <div id="envelope" class="page">
+        <div class="card">
+            <h2>💌 Ada Surat Untukmu</h2>
+            <p class="sub-text">Klik amplopnya ya sayang 💕</p>
+
+            <div class="envelope-container" onclick="openEnvelope()">
+                <svg class="envelope-svg" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Badan amplop -->
+                    <rect class="envelope-body" x="10" y="40" width="180" height="110" rx="8" />
+                    <!-- Penutup amplop (segitiga) -->
+                    <polygon class="envelope-flap" points="10,40 100,90 190,40" />
+                    <!-- Hati di tengah -->
+                    <g class="envelope-heart">
+                        <circle cx="100" cy="95" r="10" />
+                        <circle cx="112" cy="95" r="10" />
+                        <polygon points="100,80 112,80 118,90 106,108 94,108 82,90" />
+                    </g>
+                    <!-- Garis dekorasi -->
+                    <line x1="30" y1="55" x2="170" y2="55" stroke="#d97a92" stroke-width="1.5" opacity="0.3" />
+                    <line x1="30" y1="130" x2="170" y2="130" stroke="#d97a92" stroke-width="1.5" opacity="0.3" />
+                </svg>
+            </div>
+
+            <p class="click-hint">👆 Klik amplopnya</p>
         </div>
+    </div>
 
-        <!-- Pesan error -->
-        <div class="error-msg" id="pinError"></div>
+    <!-- ============================================================ -->
+    <!-- HALAMAN 4: SLIDE ISI WEB -->
+    <!-- ============================================================ -->
+    <div id="slide" class="page">
+        <div class="card">
+            <h2>💖 Untuk Fran Tersayang 💖</h2>
+            <div class="love-message">
+                <span class="heart-big">❤️</span>
+                <p>Hari-hari terasa lebih indah</p>
+                <p>karena ada kamu di dalamnya.</p>
+                <p>Terima kasih sudah menjadi bagian</p>
+                <p>dari cerita hidupku.</p>
+                <span class="heart-big">💕</span>
+                <p style="margin-top:0.8rem; font-weight:600; color:#b3415c;">
+                    I Love You, Fran!
+                </p>
+                <p style="font-size:0.9rem; opacity:0.6; margin-top:0.3rem;">
+                    — Dari seseorang yang menyayangimu —
+                </p>
+            </div>
+            <button class="btn" onclick="alert('❤️ Aku sayang kamu, Fran! ❤️')" style="font-size:1.1rem; padding:0.8rem 2.5rem;">
+                💗 Kembali 💗
+            </button>
+        </div>
     </div>
 
     <script>
-        // ====== VARIABLES ======
-        const PIN = '14072026';
+        // ================================================================
+        // VARIABLES
+        // ================================================================
+        const CORRECT_PIN = '14072026';
         let pinEntered = '';
         let wrongAttempts = 0;
-        const maxWrong = 3;
+        const MAX_WRONG = 3;
 
-        // ====== FUNGSI PIN ======
+        // ================================================================
+        // NAVIGASI HALAMAN
+        // ================================================================
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function showLockscreen() {
+            showPage('lockscreen');
+            resetPinState();
+            document.getElementById('pinError').textContent = '';
+            document.getElementById('pinError').className = 'pin-error';
+        }
+
+        function showEnvelope() {
+            showPage('envelope');
+        }
+
+        function openEnvelope() {
+            showPage('slide');
+        }
+
+        // ================================================================
+        // FUNGSI PIN
+        // ================================================================
         function pinInput(digit) {
             if (pinEntered.length >= 8) return;
             pinEntered += digit;
@@ -411,84 +633,77 @@
         function updatePinDisplay() {
             const display = document.getElementById('pinDisplay');
             const masked = pinEntered.padEnd(8, '—');
-            // tampilkan 8 karakter, pisahkan dengan spasi
             display.textContent = masked.split('').join(' ');
         }
 
         function clearError() {
-            document.getElementById('pinError').textContent = '';
+            const errorEl = document.getElementById('pinError');
+            errorEl.textContent = '';
+            errorEl.className = 'pin-error';
+        }
+
+        function resetPinState() {
+            pinEntered = '';
+            wrongAttempts = 0;
+            updatePinDisplay();
+            const errorEl = document.getElementById('pinError');
+            errorEl.textContent = '';
+            errorEl.className = 'pin-error';
         }
 
         function pinSubmit() {
             const errorEl = document.getElementById('pinError');
 
-            // Cek apakah PIN sudah 8 digit
+            // Cek panjang PIN
             if (pinEntered.length !== 8) {
                 errorEl.textContent = '❌ PIN harus 8 digit ya sayang!';
+                errorEl.className = 'pin-error';
                 return;
             }
 
-            if (pinEntered === PIN) {
-                // BENAR!
-                errorEl.style.color = '#2e7d32';
-                errorEl.textContent = '✅ PIN Benar! ❤️ Selamat datang sayang!';
-                // Di sini nanti bisa diarahkan ke halaman utama
-                // Contoh: alert('Selamat datang Fran! 💖');
-                // Atau pindah halaman: window.location.href = '...';
+            if (pinEntered === CORRECT_PIN) {
+                // ✅ BENAR
+                errorEl.textContent = '✅ PIN Benar! ❤️';
+                errorEl.className = 'pin-error success';
+
+                // Reset attempts
+                wrongAttempts = 0;
+
+                // Tunggu sebentar lalu pindah ke amplop
                 setTimeout(() => {
-                    alert('💖 Selamat datang Fran! Aku sayang kamu! 💖');
-                    // Reset PIN untuk下次
-                    resetPin();
-                }, 300);
+                    showEnvelope();
+                    resetPinState();
+                }, 500);
                 return;
             }
 
-            // SALAH
+            // ❌ SALAH
             wrongAttempts++;
-            const sisa = maxWrong - wrongAttempts;
+            const sisa = MAX_WRONG - wrongAttempts;
 
-            if (wrongAttempts >= maxWrong) {
+            if (wrongAttempts >= MAX_WRONG) {
                 // 3× salah → kasih tau PIN
-                errorEl.style.color = '#d94f4f';
                 errorEl.textContent = '💌 pin nya ini ya sayang 14072026 💌';
+                errorEl.className = 'pin-error';
                 // Reset attempts biar nggak terus-terusan
                 wrongAttempts = 0;
-                // Tapi PIN tetap harus di-reset agar bisa coba lagi
-                resetPin();
-                // Kosongkan PIN
                 pinEntered = '';
                 updatePinDisplay();
                 return;
             }
 
             // Salah tapi belum 3×
-            errorEl.style.color = '#d94f4f';
             errorEl.textContent = `❌ PIN salah! Coba lagi (${sisa}× kesempatan lagi)`;
+            errorEl.className = 'pin-error';
             pinEntered = '';
             updatePinDisplay();
         }
 
-        function resetPin() {
-            pinEntered = '';
-            updatePinDisplay();
-            // Jangan reset error kalau sedang kasih tau PIN
-        }
-
-        // ====== TAMPILKAN LOCK SCREEN ======
-        function showLockScreen() {
-            document.getElementById('welcomeScreen').classList.add('hidden');
-            document.getElementById('lockScreen').classList.add('active');
-            // Reset state
-            wrongAttempts = 0;
-            pinEntered = '';
-            updatePinDisplay();
-            document.getElementById('pinError').textContent = '';
-            document.getElementById('pinError').style.color = '#d94f4f';
-        }
-
-        // ====== KEYBOARD SUPPORT (opsional) ======
+        // ================================================================
+        // KEYBOARD SUPPORT
+        // ================================================================
         document.addEventListener('keydown', function(e) {
-            const lockActive = document.getElementById('lockScreen').classList.contains('active');
+            const lockActive = document.getElementById('lockscreen').classList.contains('active');
             if (!lockActive) return;
 
             if (e.key >= '0' && e.key <= '9') {
