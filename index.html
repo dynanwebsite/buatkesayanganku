@@ -132,7 +132,6 @@
             display: flex;
         }
 
-        /* WELCOME */
         #welcome h1 {
             font-size: 2.8rem;
             font-weight: 700;
@@ -183,7 +182,6 @@
             transform: scale(0.96);
         }
 
-        /* LOCK SCREEN */
         #lockscreen .card h2 {
             font-size: 2.2rem;
             color: #b3415c;
@@ -301,7 +299,6 @@
             color: #2e7d32;
         }
 
-        /* AMPLOP */
         #envelope .card h2 {
             font-size: 2.2rem;
             color: #b3415c;
@@ -397,7 +394,6 @@
             }
         }
 
-        /* SLIDE FOTO */
         .slide-photo {
             display: none;
         }
@@ -671,33 +667,21 @@
 </head>
 <body>
 
-    <!-- ============================================================ -->
-    <!-- HALAMAN 1: WELCOME -->
-    <!-- ============================================================ -->
+    <!-- WELCOME -->
     <div id="welcome" class="page active">
         <div class="card">
-            <h1>
-                Welcome To Love
-                <span>💗 Web Kesayangan Fran 💗</span>
-            </h1>
+            <h1>Welcome To Love <span>💗 Web Kesayangan Fran 💗</span></h1>
             <div class="sub-heart">❤ ✿ ❤ ✿ ❤</div>
             <button class="btn" onclick="showLockscreen()">✨ Masuk ✨</button>
         </div>
     </div>
 
-    <!-- ============================================================ -->
-    <!-- HALAMAN 2: LOCK SCREEN PIN -->
-    <!-- ============================================================ -->
+    <!-- LOCK SCREEN -->
     <div id="lockscreen" class="page">
         <div class="card">
-            <h2>
-                🔐 Masukkan PIN
-                <span>💖 Khusus buat cewe kesayangan Fran 💖</span>
-            </h2>
+            <h2>🔐 Masukkan PIN <span>💖 Khusus buat cewe kesayangan Fran 💖</span></h2>
             <div class="sub-heart" style="font-size:1.2rem; margin-bottom:0.8rem;">❤ ✿ ❤</div>
-
             <div class="pin-display" id="pinDisplay">— — — — — — — —</div>
-
             <div class="pin-grid">
                 <button class="pin-btn" onclick="pinInput('1')">1</button>
                 <button class="pin-btn" onclick="pinInput('2')">2</button>
@@ -712,24 +696,19 @@
                 <button class="pin-btn" onclick="pinInput('0')">0</button>
                 <button class="pin-btn" onclick="pinClear()">⌫</button>
             </div>
-
             <div class="pin-actions">
                 <button class="btn-clear" onclick="pinClearAll()">✕ Hapus</button>
                 <button onclick="pinSubmit()">✔ OK</button>
             </div>
-
             <div class="pin-error" id="pinError"></div>
         </div>
     </div>
 
-    <!-- ============================================================ -->
-    <!-- HALAMAN 3: AMPLOP -->
-    <!-- ============================================================ -->
+    <!-- AMPLOP -->
     <div id="envelope" class="page">
         <div class="card">
             <h2>💌 Ada Surat Untukmu</h2>
             <p class="sub-text">Klik amplopnya ya sayang 💕</p>
-
             <div class="envelope-container" onclick="openEnvelope()">
                 <svg class="envelope-svg" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
                     <rect class="envelope-body" x="10" y="40" width="180" height="110" rx="8" />
@@ -743,25 +722,21 @@
                     <line x1="30" y1="130" x2="170" y2="130" stroke="#d97a92" stroke-width="1.5" opacity="0.3" />
                 </svg>
             </div>
-
             <p class="click-hint">👆 Klik amplopnya</p>
         </div>
     </div>
 
-    <!-- ============================================================ -->
-    <!-- HALAMAN 4: FOTO + KATA ROMANTIS (2 SLIDE) -->
-    <!-- ============================================================ -->
+    <!-- ROMANTIC SLIDE -->
     <div id="romantic" class="page">
         <div class="card">
             <h2>💖 Untuk Cewe Kesayangan Fran 💖</h2>
             <p class="sub-romantic">✨ Dua kenangan indah untukmu ✨</p>
-
             <div class="slide-indicator">
                 <span class="dot active" id="dot1"></span>
                 <span class="dot" id="dot2"></span>
             </div>
 
-            <!-- SLIDE 1 -->
+            <!-- SLIDE 1 - FOTO 1 -->
             <div class="slide-photo active" id="slide1">
                 <div class="photo-frame">
                     <span class="frame-corner tl">❤️</span>
@@ -769,10 +744,9 @@
                     <span class="frame-corner bl">💕</span>
                     <span class="frame-corner br">✨</span>
                     <div class="photo-frame-inner">
-                        <img src="https://i.postimg.cc/G2wDkFk8/IMG-20260820-WA0012.jpg" alt="Foto 1" />
+                        <img src="https://i.ibb.co.com/03pZHg1/IMG-20260820-WA0012.jpg" alt="Foto 1" />
                     </div>
                 </div>
-
                 <div class="romantic-quotes">
                     <p>🌹 Untuk cewe paling cantik,</p>
                     <p>Senyummu adalah cahaya yang menerangi setiap hariku. Aku bersyukur bisa melihat senyum indah itu setiap hari.</p>
@@ -781,13 +755,12 @@
                     <span class="heart-divider">💖 🌸 💖</span>
                     <p class="signature">💌 Dari seseorang yang selalu menyayangimu,<br /><span style="font-size:1.3rem;">💗 Fran 💗</span></p>
                 </div>
-
                 <div class="slide-nav">
                     <button class="btn-nav" onclick="nextSlide()">➜ Selanjutnya</button>
                 </div>
             </div>
 
-            <!-- SLIDE 2 -->
+            <!-- SLIDE 2 - FOTO 2 -->
             <div class="slide-photo" id="slide2">
                 <div class="photo-frame">
                     <span class="frame-corner tl">💖</span>
@@ -795,10 +768,9 @@
                     <span class="frame-corner bl">💗</span>
                     <span class="frame-corner br">🌟</span>
                     <div class="photo-frame-inner">
-                        <img src="https://i.postimg.cc/XvHG0xCP/IMG-20260820-WA0013.jpg" alt="Foto 2" />
+                        <img src="https://i.ibb.co.com/3mhP0c44/IMG-20260820-WA0013.jpg" alt="Foto 2" />
                     </div>
                 </div>
-
                 <div class="romantic-quotes">
                     <p>💕 Untuk cewe terbaik di dunia,</p>
                     <p>Setiap hari bersamamu adalah hadiah terindah. Terima kasih sudah menjadi bagian dari cerita hidupku.</p>
@@ -807,7 +779,6 @@
                     <span class="heart-divider">🌹 💕 🌹</span>
                     <p class="signature">💌 I Love You More Than Words Can Say,<br /><span style="font-size:1.3rem;">💗 Fran 💗</span></p>
                 </div>
-
                 <div class="slide-nav">
                     <button class="btn-nav btn-nav-secondary" onclick="prevSlide()">⬅ Sebelumnya</button>
                     <button class="btn-nav" onclick="showPage('envelope')">💕 Kembali ke Amplop</button>
@@ -854,7 +825,6 @@
             document.querySelectorAll('.slide-photo').forEach(s => s.classList.remove('active'));
             const slide = document.getElementById('slide' + currentSlide);
             if (slide) slide.classList.add('active');
-
             document.querySelectorAll('.dot').forEach((dot, index) => {
                 dot.classList.toggle('active', index + 1 === currentSlide);
             });
@@ -916,28 +886,23 @@
 
         function pinSubmit() {
             const errorEl = document.getElementById('pinError');
-
             if (pinEntered.length !== 8) {
                 errorEl.textContent = '❌ PIN harus 8 digit ya sayang!';
                 errorEl.className = 'pin-error';
                 return;
             }
-
             if (pinEntered === CORRECT_PIN) {
                 errorEl.textContent = '✅ PIN Benar! ❤️';
                 errorEl.className = 'pin-error success';
                 wrongAttempts = 0;
-
                 setTimeout(() => {
                     showEnvelope();
                     resetPinState();
                 }, 500);
                 return;
             }
-
             wrongAttempts++;
             const sisa = MAX_WRONG - wrongAttempts;
-
             if (wrongAttempts >= MAX_WRONG) {
                 errorEl.textContent = '💌 pin nya ini ya sayang 14072026 💌';
                 errorEl.className = 'pin-error';
@@ -946,7 +911,6 @@
                 updatePinDisplay();
                 return;
             }
-
             errorEl.textContent = `❌ PIN salah! Coba lagi (${sisa}× kesempatan lagi)`;
             errorEl.className = 'pin-error';
             pinEntered = '';
@@ -956,7 +920,6 @@
         document.addEventListener('keydown', function(e) {
             const lockActive = document.getElementById('lockscreen').classList.contains('active');
             if (!lockActive) return;
-
             if (e.key >= '0' && e.key <= '9') {
                 pinInput(e.key);
             } else if (e.key === 'Backspace') {
