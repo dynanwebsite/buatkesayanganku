@@ -135,7 +135,6 @@
             display: flex;
         }
 
-        /* WELCOME */
         #welcome .welcome-title {
             font-size: 2.8rem;
             font-weight: 700;
@@ -191,7 +190,6 @@
             transform: scale(0.96);
         }
 
-        /* LOCK SCREEN */
         #lockscreen .card h2 {
             font-size: 2.2rem;
             color: #b3415c;
@@ -309,7 +307,6 @@
             color: #2e7d32;
         }
 
-        /* AMPLOP */
         #envelope .card h2 {
             font-size: 2.2rem;
             color: #b3415c;
@@ -405,7 +402,6 @@
             }
         }
 
-        /* ROMANTIC SLIDE */
         .slide-photo {
             display: none;
         }
@@ -436,4 +432,711 @@
             padding: 18px;
             background: linear-gradient(135deg, #ffb6c1, #ff69b4, #ff1493);
             border-radius: 32px;
-            box-shadow: 0 0 30px rgba(255, 20
+            box-shadow: 0 0 30px rgba(255, 20, 147, 0.3), 0 0 60px rgba(255, 105, 180, 0.15);
+            animation: frameGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes frameGlow {
+            0% {
+                box-shadow: 0 0 20px rgba(255, 20, 147, 0.3), 0 0 40px rgba(255, 105, 180, 0.1);
+            }
+            100% {
+                box-shadow: 0 0 50px rgba(255, 20, 147, 0.5), 0 0 80px rgba(255, 105, 180, 0.25);
+            }
+        }
+
+        .photo-frame-inner {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #fff;
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-frame-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .frame-corner {
+            position: absolute;
+            font-size: 2.4rem;
+            opacity: 0.8;
+            animation: floatCorner 4s ease-in-out infinite;
+            filter: drop-shadow(0 2px 8px rgba(255, 20, 147, 0.3));
+        }
+
+        .frame-corner.tl {
+            top: -4px;
+            left: -4px;
+            animation-delay: 0s;
+        }
+        .frame-corner.tr {
+            top: -4px;
+            right: -4px;
+            animation-delay: 1s;
+        }
+        .frame-corner.bl {
+            bottom: -4px;
+            left: -4px;
+            animation-delay: 2s;
+        }
+        .frame-corner.br {
+            bottom: -4px;
+            right: -4px;
+            animation-delay: 3s;
+        }
+
+        @keyframes floatCorner {
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+            }
+            50% {
+                transform: translateY(-8px) rotate(8deg) scale(1.1);
+            }
+        }
+
+        .romantic-quotes {
+            margin: 0.5rem 0 1.2rem;
+            padding: 1.2rem;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 20px;
+            border-left: 4px solid #ff6b8a;
+            border-right: 4px solid #ff6b8a;
+        }
+
+        .romantic-quotes p {
+            color: #4a2a3a;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .romantic-quotes p:last-child {
+            margin-bottom: 0;
+        }
+
+        .romantic-quotes .heart-divider {
+            display: block;
+            font-size: 1.3rem;
+            color: #e05a7a;
+            margin: 0.4rem 0;
+            letter-spacing: 10px;
+        }
+
+        .romantic-quotes .signature {
+            font-style: italic;
+            color: #b3415c;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        #iloveyou {
+            background: transparent;
+        }
+
+        #iloveyou .card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 2.5rem 2.5rem;
+        }
+
+        .big-love-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.2rem;
+            padding: 0.3rem 0;
+        }
+
+        .big-love {
+            font-size: 9rem;
+            line-height: 1;
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 0 0 60px rgba(255, 255, 255, 0.6), 0 0 100px rgba(255, 255, 255, 0.4), 0 0 150px rgba(255, 255, 255, 0.2);
+            animation: loveGlow 1.8s ease-in-out infinite alternate;
+            display: inline-block;
+            margin: 0;
+        }
+
+        @keyframes loveGlow {
+            0% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3), 0 0 60px rgba(255, 255, 255, 0.1);
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.12);
+            }
+            100% {
+                text-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 80px rgba(255, 255, 255, 0.7), 0 0 120px rgba(255, 255, 255, 0.5), 0 0 180px rgba(255, 255, 255, 0.3);
+                transform: scale(1.06);
+            }
+        }
+
+        .big-love-text {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+            letter-spacing: 4px;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .big-love-sub {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-style: italic;
+            letter-spacing: 2px;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .slide-nav {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 1rem;
+            margin-bottom: 0.2rem;
+            flex-wrap: wrap;
+            padding: 0.5rem 0;
+        }
+
+        .slide-nav .btn-nav {
+            padding: 0.8rem 2.5rem;
+            border: none;
+            border-radius: 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, #ff6b8a, #ee4e6b);
+            color: #fff;
+            box-shadow: 0 8px 25px rgba(238, 78, 107, 0.3);
+            min-width: 120px;
+        }
+
+        .slide-nav .btn-nav:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 35px rgba(238, 78, 107, 0.4);
+        }
+
+        .slide-nav .btn-nav:active {
+            transform: scale(0.95);
+        }
+
+        .slide-nav .btn-nav-secondary {
+            background: rgba(255, 255, 255, 0.6);
+            color: #4a2a3a;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .slide-nav .btn-nav-secondary:hover {
+            background: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .slide-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 0.8rem;
+        }
+
+        .slide-indicator .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(180, 60, 90, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .slide-indicator .dot.active {
+            background: #ee4e6b;
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(238, 78, 107, 0.3);
+        }
+
+        #bgMusic {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                padding: 1.8rem 1.2rem;
+                border-radius: 32px;
+                max-width: 97%;
+            }
+            #welcome .welcome-title {
+                font-size: 2rem;
+                margin-bottom: 0.3rem;
+            }
+            #welcome .welcome-sub {
+                font-size: 1.5rem;
+                margin-bottom: 0.3rem;
+            }
+            #welcome .welcome-love {
+                font-size: 1.5rem;
+                letter-spacing: 12px;
+                margin-bottom: 1.5rem;
+            }
+            .btn {
+                padding: 0.8rem 2.5rem;
+                font-size: 1.1rem;
+            }
+            .photo-frame {
+                max-width: 95%;
+                padding: 14px;
+            }
+            .frame-corner {
+                font-size: 1.8rem;
+            }
+            .slide-nav {
+                gap: 10px;
+                padding: 0.5rem 0;
+            }
+            .slide-nav .btn-nav {
+                padding: 0.8rem 1.8rem;
+                font-size: 1rem;
+                min-width: 100px;
+            }
+            .romantic-quotes p {
+                font-size: 0.95rem;
+            }
+            #romantic .card h2 {
+                font-size: 1.6rem;
+            }
+            .big-love {
+                font-size: 5.5rem;
+            }
+            .big-love-text {
+                font-size: 2rem;
+            }
+            .big-love-sub {
+                font-size: 1rem;
+            }
+            #iloveyou .card {
+                padding: 1.8rem 1.2rem;
+            }
+            .pin-grid {
+                gap: 8px;
+                max-width: 230px;
+            }
+            .pin-btn {
+                padding: 0.8rem 0;
+                font-size: 1.4rem;
+            }
+            .pin-display {
+                font-size: 1.8rem;
+                letter-spacing: 10px;
+                min-height: 55px;
+            }
+            #lockscreen .card h2 {
+                font-size: 1.6rem;
+            }
+            .envelope-svg {
+                width: 140px;
+                height: 110px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .card {
+                padding: 1.2rem 0.8rem;
+            }
+            .photo-frame {
+                max-width: 98%;
+                padding: 10px;
+            }
+            .frame-corner {
+                font-size: 1.4rem;
+            }
+            .big-love {
+                font-size: 4.5rem;
+            }
+            .big-love-text {
+                font-size: 1.6rem;
+            }
+            #welcome .welcome-title {
+                font-size: 1.6rem;
+            }
+            #welcome .welcome-sub {
+                font-size: 1.2rem;
+            }
+            #welcome .welcome-love {
+                font-size: 1.2rem;
+                letter-spacing: 8px;
+                margin-bottom: 1rem;
+            }
+            .slide-nav .btn-nav {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+                min-width: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================ -->
+    <!-- 🎵 AUDIO -->
+    <!-- ============================================================ -->
+    <audio id="bgMusic" loop>
+        <source src="https://github.com/dynanwebsite/buatkesayanganku/raw/refs/heads/main/fran.mp3" type="audio/mpeg" />
+        Browser tidak mendukung audio.
+    </audio>
+
+    <!-- ============================================================ -->
+    <!-- WELCOME -->
+    <!-- ============================================================ -->
+    <div id="welcome" class="page active">
+        <div class="card">
+            <div class="welcome-title">Welcome To Love</div>
+            <div class="welcome-sub">💗 Web Kesayangan Fran 💗</div>
+            <div class="welcome-love">❤ ✿ ❤ ✿ ❤</div>
+            <button class="btn" onclick="showLockscreen()">✨ Masuk ✨</button>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- LOCK SCREEN -->
+    <!-- ============================================================ -->
+    <div id="lockscreen" class="page">
+        <div class="card">
+            <h2>🔐 Masukkan PIN <span>💖 Khusus buat cewe kesayangan Fran 💖</span></h2>
+            <div style="font-size:1.2rem; margin-bottom:0.8rem; letter-spacing:10px; color:#e05a7a; opacity:0.7;">❤ ✿ ❤</div>
+            <div class="pin-display" id="pinDisplay">— — — — — — — —</div>
+            <div class="pin-grid">
+                <button class="pin-btn" onclick="pinInput('1')">1</button>
+                <button class="pin-btn" onclick="pinInput('2')">2</button>
+                <button class="pin-btn" onclick="pinInput('3')">3</button>
+                <button class="pin-btn" onclick="pinInput('4')">4</button>
+                <button class="pin-btn" onclick="pinInput('5')">5</button>
+                <button class="pin-btn" onclick="pinInput('6')">6</button>
+                <button class="pin-btn" onclick="pinInput('7')">7</button>
+                <button class="pin-btn" onclick="pinInput('8')">8</button>
+                <button class="pin-btn" onclick="pinInput('9')">9</button>
+                <button class="pin-btn empty"></button>
+                <button class="pin-btn" onclick="pinInput('0')">0</button>
+                <button class="pin-btn" onclick="pinClear()">⌫</button>
+            </div>
+            <div class="pin-actions">
+                <button class="btn-clear" onclick="pinClearAll()">✕ Hapus</button>
+                <button onclick="pinSubmit()">✔ OK</button>
+            </div>
+            <div class="pin-error" id="pinError"></div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- AMPLOP -->
+    <!-- ============================================================ -->
+    <div id="envelope" class="page">
+        <div class="card">
+            <h2>💌 Ada Surat Untukmu</h2>
+            <p class="sub-text">Klik amplopnya ya sayang 💕</p>
+            <div class="envelope-container" onclick="openEnvelope()">
+                <svg class="envelope-svg" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="envelope-body" x="10" y="40" width="180" height="110" rx="8" />
+                    <polygon class="envelope-flap" points="10,40 100,90 190,40" />
+                    <g class="envelope-heart">
+                        <circle cx="100" cy="95" r="10" />
+                        <circle cx="112" cy="95" r="10" />
+                        <polygon points="100,80 112,80 118,90 106,108 94,108 82,90" />
+                    </g>
+                    <line x1="30" y1="55" x2="170" y2="55" stroke="#d97a92" stroke-width="1.5" opacity="0.3" />
+                    <line x1="30" y1="130" x2="170" y2="130" stroke="#d97a92" stroke-width="1.5" opacity="0.3" />
+                </svg>
+            </div>
+            <p class="click-hint">👆 Klik amplopnya</p>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ROMANTIC SLIDE -->
+    <!-- ============================================================ -->
+    <div id="romantic" class="page">
+        <div class="card">
+            <h2>💖 Untuk Cewe Kesayangan Fran 💖</h2>
+            <p class="sub-romantic">✨ Tiga kenangan indah untukmu ✨</p>
+            <div class="slide-indicator">
+                <span class="dot active" id="dot1"></span>
+                <span class="dot" id="dot2"></span>
+                <span class="dot" id="dot3"></span>
+            </div>
+
+            <!-- SLIDE 1 -->
+            <div class="slide-photo active" id="slide1">
+                <div class="photo-frame">
+                    <span class="frame-corner tl">❤️</span>
+                    <span class="frame-corner tr">🌸</span>
+                    <span class="frame-corner bl">💕</span>
+                    <span class="frame-corner br">✨</span>
+                    <div class="photo-frame-inner">
+                        <img src="https://i.ibb.co.com/03pZHg1/IMG-20260820-WA0012.jpg" alt="Foto 1" />
+                    </div>
+                </div>
+                <div class="romantic-quotes">
+                    <p>🌹 Untuk cewe paling cantik,</p>
+                    <p>Senyummu adalah cahaya yang menerangi setiap hariku. Aku bersyukur bisa melihat senyum indah itu setiap hari.</p>
+                    <span class="heart-divider">❤️ ✨ 💕</span>
+                    <p>Kamu membuat dunia ini terasa lebih berwarna. Di setiap langkahku, aku selalu membayangkan senyummu.</p>
+                    <span class="heart-divider">💖 🌸 💖</span>
+                    <p class="signature">💌 Dari seseorang yang selalu menyayangimu,<br /><span style="font-size:1.3rem;">💗 Fran 💗</span></p>
+                </div>
+                <div class="slide-nav">
+                    <button class="btn-nav" onclick="nextSlide()">➜ Selanjutnya</button>
+                </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="slide-photo" id="slide2">
+                <div class="photo-frame">
+                    <span class="frame-corner tl">💖</span>
+                    <span class="frame-corner tr">🌺</span>
+                    <span class="frame-corner bl">💗</span>
+                    <span class="frame-corner br">🌟</span>
+                    <div class="photo-frame-inner">
+                        <img src="https://i.ibb.co.com/3mhP0c44/IMG-20260820-WA0013.jpg" alt="Foto 2" />
+                    </div>
+                </div>
+                <div class="romantic-quotes">
+                    <p>💕 Untuk cewe terbaik di dunia,</p>
+                    <p>Setiap hari bersamamu adalah hadiah terindah. Terima kasih sudah menjadi bagian dari cerita hidupku.</p>
+                    <span class="heart-divider">💗 ✨ 💖</span>
+                    <p>Aku ingin menghabiskan sisa hidupku bersamamu. Karena kamu adalah segalanya bagiku.</p>
+                    <span class="heart-divider">🌹 💕 🌹</span>
+                    <p class="signature">💌 I Love You More Than Words Can Say,<br /><span style="font-size:1.3rem;">💗 Fran 💗</span></p>
+                </div>
+                <div class="slide-nav">
+                    <button class="btn-nav btn-nav-secondary" onclick="prevSlide()">⬅ Sebelumnya</button>
+                    <button class="btn-nav" onclick="nextSlide()">➜ Selanjutnya</button>
+                </div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="slide-photo" id="slide3">
+                <div class="photo-frame" style="max-width:520px;">
+                    <span class="frame-corner tl">💖</span>
+                    <span class="frame-corner tr">🌹</span>
+                    <span class="frame-corner bl">💕</span>
+                    <span class="frame-corner br">✨</span>
+                    <div class="photo-frame-inner" style="background:linear-gradient(135deg, #fce4ec, #f8bbd0); display:flex; align-items:center; justify-content:center; padding:2rem;">
+                        <div style="font-size:3rem; text-align:center; color:#b3415c; font-weight:600; line-height:1.6;">
+                            🙏<br />
+                            <span style="font-size:1.6rem;">Terima Kasih</span><br />
+                            <span style="font-size:1.3rem; display:block; margin-top:0.5rem;">Sayangku</span>
+                            <span style="font-size:1.8rem; display:block; margin-top:0.3rem;">💕</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="romantic-quotes">
+                    <p>💖 Terima kasih sayangku telah menerima aku sepenuhnya,</p>
+                    <p>Makasih udah nemenin aku selama ini,</p>
+                    <p>Perhatiin aku sayang, ke aku cinta ke aku,</p>
+                    <p>Dan selalu jaga aku walaupun dari jauh,</p>
+                    <span class="heart-divider">💗 ✨ 💖</span>
+                    <p>Makasih juga sudah buat aku jadi laki-laki bahagia ya sayang.</p>
+                    <span class="heart-divider">🌹 💕 🌹</span>
+                    <p class="signature">💌 Dari pacarmu yang selalu bersyukur,<br /><span style="font-size:1.3rem;">💗 Fran 💗</span></p>
+                </div>
+                <div class="slide-nav">
+                    <button class="btn-nav btn-nav-secondary" onclick="prevSlide()">⬅ Sebelumnya</button>
+                    <button class="btn-nav" onclick="showILoveYou()">💖 I Love You More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- I LOVE YOU MORE -->
+    <!-- ============================================================ -->
+    <div id="iloveyou" class="page">
+        <div class="card">
+            <div class="big-love-wrapper">
+                <span class="big-love">❤️</span>
+                <div class="big-love-text">I Love You More</div>
+                <div class="big-love-sub">Always & Forever 💕</div>
+            </div>
+            <div style="margin-top:1.8rem; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+                <button class="btn" onclick="showPage('welcome')" style="font-size:1rem; padding:0.7rem 2rem; background:rgba(255,255,255,0.3); color:#b3415c; box-shadow:none; border:1px solid rgba(255,255,255,0.4);">
+                    💕 Kembali ke Awal
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const CORRECT_PIN = '14072026';
+        let pinEntered = '';
+        let wrongAttempts = 0;
+        const MAX_WRONG = 3;
+        let currentSlide = 1;
+        const totalSlides = 3;
+
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function showLockscreen() {
+            showPage('lockscreen');
+            resetPinState();
+            document.getElementById('pinError').textContent = '';
+            document.getElementById('pinError').className = 'pin-error';
+        }
+
+        function showEnvelope() {
+            showPage('envelope');
+            // 🎵 LAGU BUNYI PAS AMPLOP MUNCUL!
+            const audio = document.getElementById('bgMusic');
+            audio.play().catch(() => {
+                alert('⚠️ Klik layar untuk memutar lagu ya sayang! 💕');
+            });
+        }
+
+        function showRomantic() {
+            showPage('romantic');
+            currentSlide = 1;
+            updateSlide();
+        }
+
+        function showILoveYou() {
+            showPage('iloveyou');
+        }
+
+        function openEnvelope() {
+            showRomantic();
+        }
+
+        function updateSlide() {
+            document.querySelectorAll('.slide-photo').forEach(s => s.classList.remove('active'));
+            const slide = document.getElementById('slide' + currentSlide);
+            if (slide) slide.classList.add('active');
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index + 1 === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        function pinInput(digit) {
+            if (pinEntered.length >= 8) return;
+            pinEntered += digit;
+            updatePinDisplay();
+            clearError();
+        }
+
+        function pinClear() {
+            pinEntered = pinEntered.slice(0, -1);
+            updatePinDisplay();
+            clearError();
+        }
+
+        function pinClearAll() {
+            pinEntered = '';
+            updatePinDisplay();
+            clearError();
+        }
+
+        function updatePinDisplay() {
+            const display = document.getElementById('pinDisplay');
+            const masked = pinEntered.padEnd(8, '—');
+            display.textContent = masked.split('').join(' ');
+        }
+
+        function clearError() {
+            const errorEl = document.getElementById('pinError');
+            errorEl.textContent = '';
+            errorEl.className = 'pin-error';
+        }
+
+        function resetPinState() {
+            pinEntered = '';
+            wrongAttempts = 0;
+            updatePinDisplay();
+            const errorEl = document.getElementById('pinError');
+            errorEl.textContent = '';
+            errorEl.className = 'pin-error';
+        }
+
+        function pinSubmit() {
+            const errorEl = document.getElementById('pinError');
+            if (pinEntered.length !== 8) {
+                errorEl.textContent = '❌ PIN harus 8 digit ya sayang!';
+                errorEl.className = 'pin-error';
+                return;
+            }
+            if (pinEntered === CORRECT_PIN) {
+                errorEl.textContent = '✅ PIN Benar! ❤️';
+                errorEl.className = 'pin-error success';
+                wrongAttempts = 0;
+
+                // PIN benar → pindah ke amplop (lagu diputar di showEnvelope)
+                setTimeout(() => {
+                    showEnvelope();
+                    resetPinState();
+                }, 500);
+                return;
+            }
+            wrongAttempts++;
+            const sisa = MAX_WRONG - wrongAttempts;
+            if (wrongAttempts >= MAX_WRONG) {
+                errorEl.textContent = '💌 pin nya ini ya sayang 14072026 💌';
+                errorEl.className = 'pin-error';
+                wrongAttempts = 0;
+                pinEntered = '';
+                updatePinDisplay();
+                return;
+            }
+            errorEl.textContent = `❌ PIN salah! Coba lagi (${sisa}× kesempatan lagi)`;
+            errorEl.className = 'pin-error';
+            pinEntered = '';
+            updatePinDisplay();
+        }
+
+        // KLIK DI MANA SAJA BUAT MULAI LAGU (BYPASS AUTOPLAY)
+        document.addEventListener('click', function() {
+            const audio = document.getElementById('bgMusic');
+            if (audio.paused) {
+                audio.play().catch(() => {});
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            const lockActive = document.getElementById('lockscreen').classList.contains('active');
+            if (!lockActive) return;
+            if (e.key >= '0' && e.key <= '9') {
+                pinInput(e.key);
+            } else if (e.key === 'Backspace') {
+                pinClear();
+            } else if (e.key === 'Enter') {
+                pinSubmit();
+            } else if (e.key === 'Escape' || e.key === 'Delete') {
+                pinClearAll();
+            }
+        });
+    </script>
+</body>
+</html>
